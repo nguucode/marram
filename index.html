@@ -8,6 +8,8 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <!-- Old Storybook deep links (?path=/docs/...) pointed at the site root, where Storybook used to live. -->
     <script>if (/[?&](path|id)=/.test(location.search)) location.replace('storybook/' + location.search + location.hash)</script>
+<!-- same URL as laptopModel in the module script; change both together -->
+<link rel="preload" href="macbook.glb" as="fetch" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -795,6 +797,7 @@ document.addEventListener('click', e => {
 <script type="module">
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1236,30 +1239,14 @@ function flatFallback(msg) {
   host.querySelector('.laptop-note').textContent = msg;
 }
 
-/* The artifact host serves .json but not .glb, so the model ships as glTF JSON with the binary
-   inlined as base64. Rebuild a GLB in memory so the loader never fetches data: or blob: URLs, and
-   let textures load through <img> (TextureLoader) instead of fetch (ImageBitmapLoader). */
-async function loadModel(url = 'macbook.gltf.json') {
-  const j = await (await fetch(url)).json();
-  const raw = atob(j.buffers[0].uri.slice(j.buffers[0].uri.indexOf(',') + 1));
-  const binLen = (raw.length + 3) & ~3, bin = new Uint8Array(binLen);
-  for (let i = 0; i < raw.length; i++) bin[i] = raw.charCodeAt(i);
-  delete j.buffers[0].uri;
-  let json = new TextEncoder().encode(JSON.stringify(j));
-  const jsonLen = (json.length + 3) & ~3, jpad = new Uint8Array(jsonLen).fill(0x20); jpad.set(json); json = jpad;
-  const buf = new ArrayBuffer(12 + 8 + jsonLen + 8 + binLen), dv = new DataView(buf), u8 = new Uint8Array(buf);
-  dv.setUint32(0, 0x46546C67, true); dv.setUint32(4, 2, true); dv.setUint32(8, buf.byteLength, true);
-  dv.setUint32(12, jsonLen, true); dv.setUint32(16, 0x4E4F534A, true); u8.set(json, 20);
-  dv.setUint32(20 + jsonLen, binLen, true); dv.setUint32(24 + jsonLen, 0x004E4942, true); u8.set(bin, 28 + jsonLen);
-  const cib = window.createImageBitmap; window.createImageBitmap = undefined;
-  try { return await new Promise((res, rej) => new GLTFLoader().parse(buf, '', res, rej)); }
-  finally { window.createImageBitmap = cib; }
-}
+const loadModel = url => new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync(url);
+// Fetch the laptop now, while fonts, icons and the renderer get ready, not after them.
+const laptopModel = loadModel('macbook.glb'); laptopModel.catch(() => {}); // handled in start()
 
 setScreenScale(1);
 async function start() {
-  try { await document.fonts.load(font(23, 500)); await document.fonts.load(font(23, 600)); } catch {}
-  await loadIcons();
+  const fonts = [500, 600].map(w => document.fonts.load(font(23, w)).catch(() => {}));
+  await Promise.all([...fonts, loadIcons()]); // loadIcons never rejects
   drawBoard();
   let renderer;
   try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); }
@@ -1276,7 +1263,7 @@ async function start() {
   const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 1000);
 
   let gltf;
-  try { gltf = await loadModel(); }
+  try { gltf = await laptopModel; }
   catch (e) { renderer.dispose(); renderer.domElement.remove(); return flatFallback('The 3D model did not load, so here is the board on its own.'); }
 
   const model = gltf.scene;
@@ -1393,7 +1380,7 @@ async function startClouds() {
   let renderer;
   try { renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false }); } catch { canvas.remove(); return; }
   renderer.setPixelRatio(0.25); renderer.outputColorSpace = THREE.SRGBColorSpace; // upscaled from a quarter and blurred: soft, and cheap
-  let gltf; try { gltf = await loadModel('cloud.gltf.json'); } catch { renderer.dispose(); canvas.remove(); return; }
+  let gltf; try { gltf = await loadModel('cloud.glb'); } catch { renderer.dispose(); canvas.remove(); return; }
   gltf.scene.traverse(o => { if (!o.isMesh) return;
     const m = new THREE.MeshBasicMaterial({ map: o.material.map, color: CLOUD_TINT[document.querySelector('.hero').dataset.sky] || 0xffffff, transparent: true, opacity: 0.07, depthWrite: false, side: THREE.DoubleSide });
     cloudMats.push(m); o.material = m; });
@@ -1453,7 +1440,6 @@ async function startClouds() {
   let scrolling = 0; addEventListener('scroll', () => { scrolling = performance.now(); }, { passive: true });
   renderer.setAnimationLoop(now => { if (visible && !reduce && now - lastFrame > 33 && now - scrolling > 180) { lastFrame = now; frame(now); } });
 }
-startClouds();
 
 // Customiser: each knob re-themes the screen, and the primary re-tints the wallpaper too.
 function knob(id, key, rebuildWallpaper) {
@@ -1470,7 +1456,8 @@ function knob(id, key, rebuildWallpaper) {
 knob('c-accent', 'accent', true);
 knob('c-mode', 'mode', false);
 knob('c-radius', 'radius', false);
-start();
+// The laptop first; the faint clouds wait so they don't compete for bandwidth and GPU.
+start().finally(startClouds);
 </script>
   </body>
 </html>
