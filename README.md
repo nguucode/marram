@@ -10,7 +10,7 @@ Front-end UI kit for React, documented in Storybook. No CSS framework and no
 primitive library — components are plain elements styled with CSS Modules
 against a token layer of CSS custom properties.
 
-**Docs:** https://zweihander.ontheshore.biz (Storybook at [`/storybook/`](https://zweihander.ontheshore.biz/storybook/); auto-deployed from `main` via [GitHub Actions](.github/workflows/deploy-storybook.yml))
+**Docs:** https://marram.ontheshore.biz (Storybook at [`/storybook/`](https://marram.ontheshore.biz/storybook/); auto-deployed from `main` via [GitHub Actions](.github/workflows/deploy-storybook.yml))
 
 ## Stack
 
@@ -130,7 +130,7 @@ ring uses a step darker than the fill.
 Scopes nest in either direction (light values live on `:root, .light`), and
 `tokens` still accepts any custom property for values the presets don't
 cover. Full write-up in
-[Foundations → Overview](https://ontheshore.biz/zweihander/?path=/docs/foundations-overview--docs).
+[Foundations → Overview](https://marram.ontheshore.biz/?path=/docs/foundations-overview--docs).
 
 Globally, it is plain CSS — redeclare the variables after Marram's
 stylesheet, or set `data-accent` / `data-gray` on `<html>`.
@@ -148,63 +148,63 @@ No package to install or keep in sync; the component's source lands directly
 in the consumer's repo. [`registry.json`](registry.json) declares each item;
 `npx shadcn build` turns it into static JSON served at `/r/<name>.json`
 (deployed alongside Storybook, always live at
-https://ontheshore.biz/zweihander/r/<name>.json).
+https://marram.ontheshore.biz/r/<name>.json).
 
 In a project with a `components.json` (run `npx shadcn@latest init` there
 first if it has none):
 
 ```bash
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/tokens.json  # design tokens, once
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/theme.json   # <Theme> scope component
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/button.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/text-input.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/divider.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/badge.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/avatar.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/tag.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/toggle-button.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/switch.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/checkbox.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/radio.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/card.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/textarea.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/search.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/number-input.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/select.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/combobox.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/spinner.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/progress-bar.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/skeleton.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/link.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/alert.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/empty-state.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/tooltip.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/popover.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/modal.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/menu.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/breadcrumbs.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/pagination.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/tabs.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/toast.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/inline-alert.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/error-state.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/success-state.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/collapse.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/slider.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/stepper.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/rating.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/table.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/calendar.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/date-picker.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/color-picker.json
-npx shadcn@latest add https://ontheshore.biz/zweihander/r/file-uploader.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/tokens.json  # design tokens, once
+npx shadcn@latest add https://marram.ontheshore.biz/r/theme.json   # <Theme> scope component
+npx shadcn@latest add https://marram.ontheshore.biz/r/button.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/text-input.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/divider.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/badge.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/avatar.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/tag.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/toggle-button.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/switch.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/checkbox.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/radio.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/card.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/textarea.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/search.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/number-input.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/select.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/combobox.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/spinner.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/progress-bar.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/skeleton.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/link.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/alert.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/empty-state.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/tooltip.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/popover.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/modal.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/menu.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/breadcrumbs.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/pagination.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/tabs.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/toast.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/inline-alert.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/error-state.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/success-state.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/collapse.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/slider.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/stepper.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/rating.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/table.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/calendar.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/date-picker.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/color-picker.json
+npx shadcn@latest add https://marram.ontheshore.biz/r/file-uploader.json
 ```
 
 Or register Marram as a named registry in the project's `components.json`
 so components can be added by name:
 
 ```json
-{ "registries": { "@marram": "https://ontheshore.biz/zweihander/r/{name}.json" } }
+{ "registries": { "@marram": "https://marram.ontheshore.biz/r/{name}.json" } }
 ```
 
 ```bash
@@ -214,74 +214,6 @@ npx shadcn@latest add @marram/button
 The CLI resolves `registryDependencies` (e.g. `avatar` → `utils`, `icon`)
 and installs npm `dependencies` automatically, and rewrites the `@/...`
 import in the copied file to match whatever alias the target project uses.
-
-### npm package
-
-For projects that would rather version-pin than own the source. Published
-at [npmjs.com/package/marram](https://www.npmjs.com/package/marram):
-
-```bash
-npm install marram
-```
-
-```ts
-import { Button } from 'marram/button'
-import { TextInput } from 'marram/text-input'
-import { Divider } from 'marram/divider'
-import { Badge } from 'marram/badge'
-import { Avatar } from 'marram/avatar'
-import { Tag } from 'marram/tag'
-import { ToggleButton } from 'marram/toggle-button'
-import { Switch } from 'marram/switch'
-import { Checkbox } from 'marram/checkbox'
-import { RadioGroup } from 'marram/radio'
-import { Card } from 'marram/card'
-import { Textarea } from 'marram/textarea'
-import { Search } from 'marram/search'
-import { NumberInput } from 'marram/number-input'
-import { Select } from 'marram/select'
-import { Combobox } from 'marram/combobox'
-import { Spinner } from 'marram/spinner'
-import { ProgressBar } from 'marram/progress-bar'
-import { Skeleton } from 'marram/skeleton'
-import { Link } from 'marram/link'
-import { Alert } from 'marram/alert'
-import { EmptyState } from 'marram/empty-state'
-import { Tooltip } from 'marram/tooltip'
-import { Popover } from 'marram/popover'
-import { Modal } from 'marram/modal'
-import { Menu } from 'marram/menu'
-import { Breadcrumbs } from 'marram/breadcrumbs'
-import { Pagination } from 'marram/pagination'
-import { Tabs } from 'marram/tabs'
-import { InlineAlert } from 'marram/inline-alert'
-import { ErrorState } from 'marram/error-state'
-import { SuccessState } from 'marram/success-state'
-import { Collapse } from 'marram/collapse'
-import { Slider } from 'marram/slider'
-import { Stepper } from 'marram/stepper'
-import { Rating } from 'marram/rating'
-import { Table } from 'marram/table'
-import { Calendar } from 'marram/calendar'
-import { DatePicker } from 'marram/date-picker'
-import { ColorPicker } from 'marram/color-picker'
-import { FileUploader } from 'marram/file-uploader'
-import { ToastProvider, useToast } from 'marram/toast'
-```
-
-```css
-@import "marram/tokens.css";  /* the token layer */
-@import "marram/styles.css";  /* the component styles */
-```
-
-Order matters: the component styles read the tokens. Nothing else is
-required — no framework config, no content scanning, no build plugin.
-
-`react`/`react-dom` are peer dependencies; `clsx` — the only runtime
-dependency — installs automatically. `npm run build:lib` builds
-`dist/` (bundled JS + `.d.ts` + `tokens.css`); CI runs it on every push so a
-breaking change surfaces before the next `npm publish` (a manual step, not
-automated by CI).
 
 ## Adding a component
 

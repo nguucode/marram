@@ -1,17 +1,17 @@
 ---
-description: Chọn cách làm chart cho Zweihänder (Visualization + Spark, chỉ Bar/Line/Pie). So Recharts 3, ECharts 6 (Cloudflare Kumo dùng), visx, Nivo, Chart.js, uPlot, Tremor, shadcn charts, Observable Plot, d3 + SVG tự viết về bundle, SVG/Canvas, theme bằng CSS variable, a11y, bảo trì. Khuyến nghị tự dựng SVG trên d3-scale + d3-shape, Spark không dependency.
+description: Chọn cách làm chart cho Marram (Visualization + Spark, chỉ Bar/Line/Pie). So Recharts 3, ECharts 6 (Cloudflare Kumo dùng), visx, Nivo, Chart.js, uPlot, Tremor, shadcn charts, Observable Plot, d3 + SVG tự viết về bundle, SVG/Canvas, theme bằng CSS variable, a11y, bảo trì. Khuyến nghị tự dựng SVG trên d3-scale + d3-shape, Spark không dependency.
 type: research
 status: done
 updated: 2026-10-20
 access: internal
-tags: [zweihander, research, chart, data-viz, tokens, accessibility, design-system]
+tags: [marram, research, chart, data-viz, tokens, accessibility, design-system]
 ---
 
-# Chart cho Zweihänder: dùng thư viện hay tự dựng
+# Chart cho Marram: dùng thư viện hay tự dựng
 
 Phạm vi: hai họ chart. **Visualization** là chart đầy đủ: trục, gridline, legend kèm tổng từng series ("● 2xx 2.56k"), tooltip, trục x theo thời gian ("Oct 19, 12:00"), bar chồng, đoạn nét đứt cho bucket cuối chưa đủ dữ liệu, danh sách "top N" nằm ngang (nhãn, thanh mảnh, giá trị). **Spark** là line/area tí hon trong KPI card: không trục, không nhãn, có vùng tô dưới đường mảnh, có trạng thái "No data". Đợt này chỉ làm Bar (kể cả stacked và nằm ngang), Line (kể cả area), Pie (kể cả donut).
 
-Nguồn đọc ngày 2026-10-20: npm registry (version, ngày release, dependency, license), GitHub API (star, issue + PR đang mở, lần push cuối), bundlephobia API, mã nguồn trên GitHub và unpkg, tài liệu chính thức của từng thư viện, W3C/WAI. Số có ghi *tự đo* là do tôi tải file build chính thức từ unpkg hoặc esm.sh rồi đo bằng `gzip -9`. Không cài package nào vào repo. Dữ kiện Zweihänder lấy từ worktree `design-system-charts-6c39b6` (HEAD `235d87e`).
+Nguồn đọc ngày 2026-10-20: npm registry (version, ngày release, dependency, license), GitHub API (star, issue + PR đang mở, lần push cuối), bundlephobia API, mã nguồn trên GitHub và unpkg, tài liệu chính thức của từng thư viện, W3C/WAI. Số có ghi *tự đo* là do tôi tải file build chính thức từ unpkg hoặc esm.sh rồi đo bằng `gzip -9`. Không cài package nào vào repo. Dữ kiện Marram lấy từ worktree `design-system-charts-6c39b6` (HEAD `235d87e`).
 
 ## Kết luận
 
@@ -19,10 +19,10 @@ Nguồn đọc ngày 2026-10-20: npm registry (version, ngày release, dependenc
 
 Lý do, theo thứ tự nặng nhẹ:
 
-1. **Token của Zweihänder chỉ sống ở CSS.** Dark mode là đổi class `.dark`, accent là `[data-accent]`, density là `data-density`, không có theme object JS (`src/tokens.css:1-7`). Chart vẽ bằng SVG thì nhận thẳng `fill="var(--chart-1)"`, đổi theme không cần React render lại. Chart vẽ bằng canvas (ECharts, Chart.js, uPlot) phải đọc màu ra bằng JS rồi vẽ lại mỗi lần đổi theme. ECharts còn không parse được `oklch()`: bộ parse màu của zrender 6.1.0 chỉ nhận `rgb`, `rgba`, `hsl`, `hsla` ([zrender `lib/tool/color.js`](https://unpkg.com/zrender@6.1.0/lib/tool/color.js), dòng 194-220), trong khi mọi màu của Zweihänder đều là oklch.
+1. **Token của Marram chỉ sống ở CSS.** Dark mode là đổi class `.dark`, accent là `[data-accent]`, density là `data-density`, không có theme object JS (`src/tokens.css:1-7`). Chart vẽ bằng SVG thì nhận thẳng `fill="var(--chart-1)"`, đổi theme không cần React render lại. Chart vẽ bằng canvas (ECharts, Chart.js, uPlot) phải đọc màu ra bằng JS rồi vẽ lại mỗi lần đổi theme. ECharts còn không parse được `oklch()`: bộ parse màu của zrender 6.1.0 chỉ nhận `rgb`, `rgba`, `hsl`, `hsla` ([zrender `lib/tool/color.js`](https://unpkg.com/zrender@6.1.0/lib/tool/color.js), dòng 194-220), trong khi mọi màu của Marram đều là oklch.
 2. **Phạm vi nhỏ, phần khó đã có d3 lo.** Ba loại chart cơ bản không cần zoom, brush, map hay hàng triệu điểm, là những thứ khiến thư viện lớn đáng tiền. Phần khó thật sự là chọn tick đẹp và tick theo thời gian, đã nằm trong `d3-scale`. Path cho line, area, stack, arc nằm trong `d3-shape`. Hai gói tầm **19 KB gzip** (*tự đo*, chỉ các export cần), so với khoảng **63–157 KB** của Recharts 3 và **169–368 KB** của ECharts 6 (bảng dưới).
-3. **Hợp với cách Zweihänder phát hành.** `package.json` hiện chỉ có hai dependency (`@base-ui/react`, `clsx`), và component còn được phát qua registry copy-source. Recharts 3 kéo theo Redux Toolkit, immer, reselect, react-redux ([npm](https://registry.npmjs.org/recharts)) vào mọi người dùng chart.
-4. **A11y theo chuẩn của mình.** WAI yêu cầu chart có mô tả ngắn và mô tả dài ([WAI Complex Images](https://www.w3.org/WAI/tutorials/images/complex/)). Zweihänder đã có `Table`, nên "xem dạng bảng" là ghép component có sẵn, không phải chờ thư viện hỗ trợ.
+3. **Hợp với cách Marram phát hành.** `package.json` hiện chỉ có hai dependency (`@base-ui/react`, `clsx`), và component còn được phát qua registry copy-source. Recharts 3 kéo theo Redux Toolkit, immer, reselect, react-redux ([npm](https://registry.npmjs.org/recharts)) vào mọi người dùng chart.
+4. **A11y theo chuẩn của mình.** WAI yêu cầu chart có mô tả ngắn và mô tả dài ([WAI Complex Images](https://www.w3.org/WAI/tutorials/images/complex/)). Marram đã có `Table`, nên "xem dạng bảng" là ghép component có sẵn, không phải chờ thư viện hỗ trợ.
 
 Cái giá: tự dựng tốn thêm khoảng 600–800 dòng code so với bọc Recharts, tầm 2–3 ticket (*ước lượng*, xem §5). Rủi ro nằm ở các ca biên: nhãn trục đè nhau, tooltip sát mép, trục thời gian qua giờ DST. Nếu sếp ưu tiên ra nhanh hơn bundle và độ khớp token thì chọn Recharts 3: vẫn là SVG, vẫn nhận `var(--…)`, keyboard bật sẵn từ v3. Khi nào cần sankey, bản đồ, brush/zoom hoặc dữ liệu rất lớn thì thêm ECharts thành entry riêng, tuỳ chọn, giống cách Kumo bắt người dùng tự cài `echarts`. Không đưa nó vào lõi.
 
@@ -43,14 +43,14 @@ Bundle tính theo min + gzip. Các cột "theme bằng CSS var" và "dark mode k
 | **shadcn/ui chart** | SVG (Recharts 3) | Bằng Recharts + ~373 dòng `chart.tsx` ([source](https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/chart.tsx)) | **Có**: `--chart-1…5` và `--color-<key>` theo `ChartConfig` | Theo Recharts | Theo Recharts | Có | 2026-10-19 (repo); 126k★ | MIT |
 | **Observable Plot 0.6.17** | SVG (DOM, không phải React) | 128.0 KB kể cả d3 ([bundlephobia](https://bundlephobia.com/package/@observablehq/plot@0.6.17)); UMD không kèm d3 68.7 KB (*tự đo*) | Có thể (SVG); **unverified** | `ariaLabel`, `ariaDescription`, mark tự sinh aria-label ([docs](https://github.com/observablehq/plot/blob/main/docs/features/accessibility.md)) | Có | Có | 2025-02-14 · 2026-09-01 | ISC |
 
-Loại sớm: **Tremor** (cần Tailwind, mà Zweihänder không dùng CSS framework; gói npm không ra bản mới từ 2025-01). **Chart.js, uPlot** (canvas, không có a11y, không đọc được token). **Nivo** (17 tháng không release; theme bằng object JS). **Observable Plot** (API imperative trả về DOM node, docs nói SSR "chỉ thực tế cho plot đơn giản với ít dữ liệu", [getting-started](https://github.com/observablehq/plot/blob/main/docs/getting-started.md)). **visx** đứng giữa: không có gì visx làm được mà d3-scale + d3-shape + JSX không làm được, trong khi nó thêm một lớp abstraction và peer `react-spring` cho animation mà ta chưa cần.
+Loại sớm: **Tremor** (cần Tailwind, mà Marram không dùng CSS framework; gói npm không ra bản mới từ 2025-01). **Chart.js, uPlot** (canvas, không có a11y, không đọc được token). **Nivo** (17 tháng không release; theme bằng object JS). **Observable Plot** (API imperative trả về DOM node, docs nói SSR "chỉ thực tế cho plot đơn giản với ít dữ liệu", [getting-started](https://github.com/observablehq/plot/blob/main/docs/getting-started.md)). **visx** đứng giữa: không có gì visx làm được mà d3-scale + d3-shape + JSX không làm được, trong khi nó thêm một lớp abstraction và peer `react-spring` cho animation mà ta chưa cần.
 
 Còn lại hai ứng viên thật: **tự dựng trên d3** và **Recharts 3**. ECharts được xét riêng ở §2 vì Cloudflare dùng nó.
 
-## 1. Zweihänder hôm nay: ràng buộc cho chart
+## 1. Marram hôm nay: ràng buộc cho chart
 
 - **React 19, CSS Modules, không CSS framework.** Peer `react ^19`, dependency chỉ có `@base-ui/react` và `clsx` (`package.json`). Component phát qua npm và qua registry shadcn (`shadcn build --output site/r`).
-- **Theme thuần CSS.** `tokens.css` ghi rõ: "There is no JavaScript theme object" (`src/tokens.css:4-6`). Dark mode là class `.dark` (`src/tokens.css:580`), accent là `[data-accent]`, density dùng hai switch `--density-default`/`--density-compact` (PR #138). Thư viện nào cần màu dạng JS sẽ phải có một lớp `getComputedStyle` + `MutationObserver` canh class `.dark`, `data-accent`, `data-density`. Lớp đó Zweihänder chưa từng cần.
+- **Theme thuần CSS.** `tokens.css` ghi rõ: "There is no JavaScript theme object" (`src/tokens.css:4-6`). Dark mode là class `.dark` (`src/tokens.css:580`), accent là `[data-accent]`, density dùng hai switch `--density-default`/`--density-compact` (PR #138). Thư viện nào cần màu dạng JS sẽ phải có một lớp `getComputedStyle` + `MutationObserver` canh class `.dark`, `data-accent`, `data-density`. Lớp đó Marram chưa từng cần.
 - **Màu là oklch.** Mọi primitive và semantic đều viết `oklch(…)`. ECharts (zrender) và Chart.js (`@kurkle/color` 0.3.x) không parse được, nên phải đổi sang rgb trước khi đưa vào.
 - **Chưa có palette data-viz.** `tokens/semantic.json` có 17 hue, mỗi hue 4 token (`--blue`, `--blue-foreground`, `--blue-subtle`, `--blue-text`), cộng các semantic status (`--success`, `--warning`, `--danger`, `--info`). Không có `--chart-*`. Xem §6.
 - **Đồ có sẵn để ghép:** `Card` (khung KPI), `Stats` pattern (`src/components/patterns/application-ui/Stats.tsx`, chỗ đặt Spark), `ProgressBar` (thanh của top N), `Tooltip`/`Popover` (Base UI), `Table` (bảng dữ liệu thay thế cho chart), `EmptyState`, `Skeleton`.
@@ -58,7 +58,7 @@ Còn lại hai ứng viên thật: **tự dựng trên d3** và **Recharts 3**. 
 
 ## 2. Cloudflare dùng gì: Kumo + ECharts
 
-**Đã kiểm chứng.** `@cloudflare/kumo` tồn tại: bản 2.15.0 phát hành 2026-10-19, MIT, repo [cloudflare/kumo](https://github.com/cloudflare/kumo) (4.1k★). README gọi nó là "Cloudflare's component library", xây trên **Base UI**, cùng primitive library với Zweihänder ([README](https://github.com/cloudflare/kumo/blob/main/README.md)). `echarts ^6.0.0` là **peer dependency** ([npm](https://registry.npmjs.org/@cloudflare%2Fkumo)). Trang docs chart mở đầu bằng "Charts built on ECharts" ([charts/index.mdx](https://github.com/cloudflare/kumo/blob/main/packages/kumo-docs-astro/src/pages/charts/index.mdx)), và trang màu ghi "color tokens for Cloudflare dashboard charts" ([charts/colors.mdx](https://github.com/cloudflare/kumo/blob/main/packages/kumo-docs-astro/src/pages/charts/colors.mdx)). Vậy Cloudflare dashboard vẽ chart bằng ECharts qua Kumo. Tôi chưa mở được bundle của dash.cloudflare.com để đối chiếu trực tiếp (**unverified** ở mức production bundle), nhưng tài liệu chính chủ đã nói rõ.
+**Đã kiểm chứng.** `@cloudflare/kumo` tồn tại: bản 2.15.0 phát hành 2026-10-19, MIT, repo [cloudflare/kumo](https://github.com/cloudflare/kumo) (4.1k★). README gọi nó là "Cloudflare's component library", xây trên **Base UI**, cùng primitive library với Marram ([README](https://github.com/cloudflare/kumo/blob/main/README.md)). `echarts ^6.0.0` là **peer dependency** ([npm](https://registry.npmjs.org/@cloudflare%2Fkumo)). Trang docs chart mở đầu bằng "Charts built on ECharts" ([charts/index.mdx](https://github.com/cloudflare/kumo/blob/main/packages/kumo-docs-astro/src/pages/charts/index.mdx)), và trang màu ghi "color tokens for Cloudflare dashboard charts" ([charts/colors.mdx](https://github.com/cloudflare/kumo/blob/main/packages/kumo-docs-astro/src/pages/charts/colors.mdx)). Vậy Cloudflare dashboard vẽ chart bằng ECharts qua Kumo. Tôi chưa mở được bundle của dash.cloudflare.com để đối chiếu trực tiếp (**unverified** ở mức production bundle), nhưng tài liệu chính chủ đã nói rõ.
 
 Kumo làm chart thế nào (đọc `packages/kumo/src/components/chart/`):
 
@@ -78,7 +78,7 @@ Kumo làm chart thế nào (đọc `packages/kumo/src/components/chart/`):
 
 - **Theme:** màu là chuỗi đi thẳng vào thuộc tính SVG, nên `fill="var(--chart-1)"` chạy được, đổi `.dark` không cần render lại. shadcn làm đúng như vậy: `ChartConfig` sinh `--color-<key>` cho từng series qua thẻ `<style>`, có map `THEMES = { light: "", dark: ".dark" }` ([chart.tsx](https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/chart.tsx), dòng 9 và 95-104). Docs dặn dùng `var(--chart-1)` thay cho `hsl(var(--chart-1))` từ Recharts v3.
 - **A11y:** `accessibilityLayer` bật mặc định từ 3.0: thêm thuộc tính a11y và điều khiển bằng phím ([migration guide](https://github.com/recharts/recharts/wiki/3.0-migration-guide)). Đây là điểm cộng lớn nhất so với tự dựng.
-- **Bundle:** điểm yếu. Bundlephobia đo cả gói 151.5 KB gzip, mỗi export chart 62.6–67.6 KB (vì chúng dùng chung store Redux). Qua esm.sh với `exports=LineChart,Line` vẫn ra 154 KB (*tự đo*), tức gần như không tree-shake được ở bundler đó. Số thật khi build bằng Vite của Zweihänder chưa đo (**unverified**). Nếu chọn hướng này thì ticket đầu phải đo.
+- **Bundle:** điểm yếu. Bundlephobia đo cả gói 151.5 KB gzip, mỗi export chart 62.6–67.6 KB (vì chúng dùng chung store Redux). Qua esm.sh với `exports=LineChart,Line` vẫn ra 154 KB (*tự đo*), tức gần như không tree-shake được ở bundler đó. Số thật khi build bằng Vite của Marram chưa đo (**unverified**). Nếu chọn hướng này thì ticket đầu phải đo.
 - **Dependency:** 11 gói, gồm `@reduxjs/toolkit`, `immer`, `react-redux`, `reselect`, `victory-vendor` ([npm](https://registry.npmjs.org/recharts)).
 - **Ca của ta:** stacked = `stackId`. Nét đứt cho bucket cuối = hai `<Line>`, một liền và một `strokeDasharray`, chung một điểm nối (cùng mẹo Kumo dùng). Trục thời gian: Recharts không có time scale như d3. Thường dùng `XAxis type="number" scale="time"` cộng `tickFormatter`, nên tick "đẹp" theo giờ/ngày phải tự lo (**unverified** cho v3: docs không nói rõ).
 - **Phần vẫn phải viết:** legend kèm tổng, tooltip theo style của mình, top N, Spark, empty state, bảng dữ liệu, MDX, story. shadcn cần 373 dòng chỉ cho phần bọc.
@@ -175,7 +175,7 @@ Rủi ro của tự dựng, và cách chặn:
 ## 7. Yêu cầu a11y
 
 - **Tương phản phần tử đồ hoạ:** WCAG 1.4.11 yêu cầu "a contrast ratio of at least 3:1 against adjacent color(s)" cho phần đồ hoạ cần để hiểu nội dung ([Understanding 1.4.11](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)). Áp vào line, bar, slice so với nền card. Giữa hai segment kề nhau thì khe nền ở §6 giúp mỗi segment giáp nền thay vì giáp nhau. Đây là cách tôi suy ra từ chữ "adjacent", W3C không viết riêng cho chart.
-- **Mô tả hai phần:** WAI xếp chart vào "complex images", cần "a two-part text alternative": mô tả ngắn để nhận diện và mô tả dài chứa thông tin cốt lõi ([WAI Complex Images](https://www.w3.org/WAI/tutorials/images/complex/)). Với Zweihänder: SVG có `role="img"` + `aria-label` (tiêu đề + khoảng thời gian), mô tả dài là `Table` dữ liệu sau nút "Xem dạng bảng" hoặc `aria-describedby` tới bảng ẩn.
+- **Mô tả hai phần:** WAI xếp chart vào "complex images", cần "a two-part text alternative": mô tả ngắn để nhận diện và mô tả dài chứa thông tin cốt lõi ([WAI Complex Images](https://www.w3.org/WAI/tutorials/images/complex/)). Với Marram: SVG có `role="img"` + `aria-label` (tiêu đề + khoảng thời gian), mô tả dài là `Table` dữ liệu sau nút "Xem dạng bảng" hoặc `aria-describedby` tới bảng ẩn.
 - **Canvas:** Chart.js tự nhận nội dung canvas "will not be accessible to screen readers" và phải bù bằng ARIA hoặc fallback content ([Chart.js Accessibility](https://www.chartjs.org/docs/latest/general/accessibility.html)). Đây là lý do thứ hai, ngoài token, để tránh canvas.
 - **Bàn phím:** tooltip không được là đường duy nhất để đọc giá trị. Có bảng thì đạt. Điều hướng bằng phím qua từng điểm (như `accessibilityLayer` của Recharts) là tốt hơn mức tối thiểu, có thể làm sau.
 - **Motion:** nếu có animation vào cảnh, tôn trọng `prefers-reduced-motion`, như quy ước motion của dự án.
@@ -185,7 +185,7 @@ Rủi ro của tự dựng, và cách chặn:
 1. Chốt tự dựng (d3) hay Recharts 3? Khuyến nghị là tự dựng. Chọn Recharts thì ticket đầu phải đo bundle thật bằng Vite.
 2. Trục thời gian theo giờ của người xem hay UTC (Cloudflare cho chọn)? Ảnh hưởng `scaleTime` hay `scaleUtc` và `Intl` `timeZone`.
 3. Điều hướng bằng phím qua từng điểm: làm ngay hay để sau, khi đã có bảng dữ liệu?
-4. Chart là component `experimental` ngoài scope 1.0 (`zweihander-component-list.md` không có chart), nên cần đi qua Figma trước khi code (COMPONENTS.md §0)?
+4. Chart là component `experimental` ngoài scope 1.0 (`marram-component-list.md` không có chart), nên cần đi qua Figma trước khi code (COMPONENTS.md §0)?
 5. Palette `--chart-1…8`: tôi chọn bước và thứ tự rồi trình sếp duyệt, hay sếp đưa hướng màu trước?
 
 ## Nguồn

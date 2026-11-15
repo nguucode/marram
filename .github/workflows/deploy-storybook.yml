@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: https://zweihander.ontheshore.biz
+      url: https://marram.ontheshore.biz
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,11 +40,8 @@ jobs:
       - uses: ./.github/actions/playwright
       - run: npx tsc -b
       - run: npx vitest --project storybook run
-      # Verifies the npm package still builds; output isn't published here
-      # (that's a separate, explicit `npm publish` step).
-      - run: npm run build:lib
       # Docs home at /, Storybook at /storybook/, shadcn-CLI registry at /r/<name>.json
-      # so consumers can run `npx shadcn add https://zweihander.ontheshore.biz/r/button.json`.
+      # so consumers can run `npx shadcn add https://marram.ontheshore.biz/r/button.json`.
       - run: npm run build:site
       - name: Publish build to gh-pages
         working-directory: site
@@ -53,7 +50,7 @@ jobs:
           git add -A
           git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Build ${GITHUB_SHA}"
           git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" gh-pages
-      # zweihander.ontheshore.biz: this repo's own GitHub Pages site (custom
+      # marram.ontheshore.biz: this repo's own GitHub Pages site (custom
       # domain set in repo settings, CNAME record in Cloudflare DNS).
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,31 +1,31 @@
 ---
-description: Chuẩn hoá hệ spacing của Zweihänder theo kiểu tier của Atlassian (small/medium/large). So Atlassian, Primer, Carbon, Polaris, Spectrum về thang, tier dùng, cách ép buộc; audit spacing hiện tại có file:line và số đếm; đề xuất token, docs, lint, Figma scope.
+description: Chuẩn hoá hệ spacing của Marram theo kiểu tier của Atlassian (small/medium/large). So Atlassian, Primer, Carbon, Polaris, Spectrum về thang, tier dùng, cách ép buộc; audit spacing hiện tại có file:line và số đếm; đề xuất token, docs, lint, Figma scope.
 type: research
 status: done
 updated: 2026-10-19
 access: internal
-tags: [zweihander, research, tokens, spacing, design-system, stylelint, figma]
+tags: [marram, research, tokens, spacing, design-system, stylelint, figma]
 ---
 
-# Hệ spacing của Zweihänder: tier dùng, thang và cách ép buộc
+# Hệ spacing của Marram: tier dùng, thang và cách ép buộc
 
-Phạm vi: Atlassian (docs atlassian.design và mã đã build trong npm `@atlaskit/tokens@20.6.1`, `@atlaskit/primitives@22.6.0`, `@atlaskit/eslint-plugin-design-system@16.13.9`), GitHub Primer (`primer/primitives`, `primer/stylelint-config`), IBM Carbon, Shopify Polaris (`polaris-tokens`), Adobe Spectrum (`adobe/spectrum-design-data`) và tài liệu Figma về variable scope. Đọc ngày 2026-10-19, file token lấy thẳng từ `main` qua raw.githubusercontent.com hoặc từ tarball npm. Dữ kiện Zweihänder lấy từ worktree `zweihander-spacing-system-a47871` (HEAD `bdedfec`). Số có ghi *tự đếm* là do script quét 63 file CSS trong `src/` và `.storybook/` (bỏ `src/tokens.css`, đã lọc `._*`). Material 3 bỏ qua: không có thang spacing dạng token để so (xem [[unified-spec-system]]).
+Phạm vi: Atlassian (docs atlassian.design và mã đã build trong npm `@atlaskit/tokens@20.6.1`, `@atlaskit/primitives@22.6.0`, `@atlaskit/eslint-plugin-design-system@16.13.9`), GitHub Primer (`primer/primitives`, `primer/stylelint-config`), IBM Carbon, Shopify Polaris (`polaris-tokens`), Adobe Spectrum (`adobe/spectrum-design-data`) và tài liệu Figma về variable scope. Đọc ngày 2026-10-19, file token lấy thẳng từ `main` qua raw.githubusercontent.com hoặc từ tarball npm. Dữ kiện Marram lấy từ worktree `marram-spacing-system-a47871` (HEAD `bdedfec`). Số có ghi *tự đếm* là do script quét 63 file CSS trong `src/` và `.storybook/` (bỏ `src/tokens.css`, đã lọc `._*`). Material 3 bỏ qua: không có thang spacing dạng token để so (xem [[unified-spec-system]]).
 
 ## Kết luận
 
 **Lấy ba tier của Atlassian làm luật viết trong docs, không làm luật lint. Lint chỉ ép từ vựng.** Không hệ nào trong năm hệ ép "tier nào dùng ở đâu" bằng máy. Atlassian viết tier thành văn xuôi, còn ESLint của họ chỉ chặn literal và gợi ý token gần nhất. Danh sách tier của chính Atlassian cũng chồng nhau ("vertical spacing in a card" có mặt ở cả small lẫn medium), nên tier là heuristic để người chọn, không phải điều kiện máy quyết được.
 
-Zweihänder đã có sẵn lớp mà Atlassian chỉ viết bằng chữ. Phần lớn tier "small" của Atlassian (padding trong input, icon–text gap, padding component nhỏ) ở đây đã là token của control tier (`--control-{xs,sm,md}-pad/-pad-spacious/-gap`). Vậy việc cần làm là năm việc sau, theo thứ tự:
+Marram đã có sẵn lớp mà Atlassian chỉ viết bằng chữ. Phần lớn tier "small" của Atlassian (padding trong input, icon–text gap, padding component nhỏ) ở đây đã là token của control tier (`--control-{xs,sm,md}-pad/-pad-spacious/-gap`). Vậy việc cần làm là năm việc sau, theo thứ tự:
 
 1. **Lấp hai lỗ trong thang:** thêm `--space-0-5` (2px) và `--space-5` (20px). 17 trên 20 chỗ component đang thoát token là ±2px (*tự đếm*), còn 20px đang được ghép bằng `calc(var(--space-4) + var(--space-1))`. Chưa thêm 64/80, vì chưa component nào cần.
-2. **Viết lại `Spacing.mdx`** (đang sai, xem §1.4) quanh ba tier, đặt theo tên của Zweihänder, cùng một luật ưu tiên: *trong control thì dùng control tier, tier chỉ áp cho khoảng cách giữa các thứ và cho container*.
+2. **Viết lại `Spacing.mdx`** (đang sai, xem §1.4) quanh ba tier, đặt theo tên của Marram, cùng một luật ưu tiên: *trong control thì dùng control tier, tier chỉ áp cho khoảng cách giữa các thứ và cho container*.
 3. **Siết Stylelint ở chỗ đang hở:** thuộc tính spacing chỉ nhận `--space-*`, `--control-*-pad*`, `--control-*-gap` hoặc biến cục bộ của component. Hiện giờ mọi `var()` đều lọt qua. Thêm cả `inset`, `top/right/bottom/left` và `translate` vào danh sách.
 4. **Gắn Figma scope vào export DTCG** theo cách của Primer: `space.*` và `control.*-pad/-gap` chỉ hiện ở Gap/Padding, còn `control.{xs,sm,md}` chỉ hiện ở Width/Height. Làm vậy thì Figma tự hạn chế picker, không cần ai nhớ.
 5. **Quyết riêng chuyện sizing:** 67 chỗ đang dùng `--space-*` làm kích thước (*tự đếm*). Nếu bước 4 bỏ WIDTH_HEIGHT khỏi biến spacing thì các chỗ đó sẽ gãy trong Figma. Đây là câu hỏi mở số 1, không phải việc làm ngay.
 
-Không thêm token gap/padding ngữ nghĩa (`--gap-sm`, `--stack-gap-normal`…) ở đợt này. Atlassian vừa thêm `space.gap.*` nhưng còn ở trạng thái `experimental`. Spectrum đang deprecate 149 token layout để chuyển sang token ngữ nghĩa mới. Cả hai còn đang đổi. Control tier của Zweihänder đã giữ vai trò ngữ nghĩa cho phần cần nó nhất.
+Không thêm token gap/padding ngữ nghĩa (`--gap-sm`, `--stack-gap-normal`…) ở đợt này. Atlassian vừa thêm `space.gap.*` nhưng còn ở trạng thái `experimental`. Spectrum đang deprecate 149 token layout để chuyển sang token ngữ nghĩa mới. Cả hai còn đang đổi. Control tier của Marram đã giữ vai trò ngữ nghĩa cho phần cần nó nhất.
 
-## 1. Zweihänder hôm nay
+## 1. Marram hôm nay
 
 ### 1.1 Token
 
@@ -58,7 +58,7 @@ Tổng số lần đọc token: `--space-2` 104, `--space-4` 88, `--space-1` 76,
 
 Chỉ tính các thuộc tính spacing (padding, margin, gap, inset), có 318 lần đọc `--space-*`. Chia theo tier của Atlassian:
 
-| Tier (Atlassian) | Token Zweihänder | gap | padding | margin | inset | Tổng |
+| Tier (Atlassian) | Token Marram | gap | padding | margin | inset | Tổng |
 |---|---|---|---|---|---|---|
 | Small 0–8 | `1`, `1-5`, `2` | 82 | 50 | 27 | 6 | **165** |
 | Medium 12–24 | `2-5`, `3`, `4`, `6` | 53 | 61 | 13 | 11 | **138** |
@@ -97,7 +97,7 @@ Ba lỗ trong lint:
 - *Medium* (`space.150`–`space.300`): padding component lớn (button), avatar hay icon lớn–nội dung (section message), khoảng dọc giữa các phần tử trong card, item trong component thưa.
 - *Large* (`space.400`–`space.1000`): khoảng cách nội dung trên trang (đỉnh trang–header), căn trong nội dung lớn (Flag).
 
-Tier được ghi ngay vào token: `description` của mỗi bậc là câu tier, ví dụ `space.150`: "Use for larger and less dense pieces of UI" (`atlassian-spacing.js`, như trên). Mỗi token còn mang `suggest`, tức danh sách px lệch thang mà tooling map về nó. `space.150` nhận 10, 11, 13, 14px, nghĩa là **10px của Zweihänder ở bên Atlassian sẽ bị đẩy về 12**.
+Tier được ghi ngay vào token: `description` của mỗi bậc là câu tier, ví dụ `space.150`: "Use for larger and less dense pieces of UI" (`atlassian-spacing.js`, như trên). Mỗi token còn mang `suggest`, tức danh sách px lệch thang mà tooling map về nó. `space.150` nhận 10, 11, 13, 14px, nghĩa là **10px của Marram ở bên Atlassian sẽ bị đẩy về 12**.
 
 **Ép buộc.**
 - `use-tokens-space` báo lỗi khi literal đứng ở chỗ phải dùng space token, và autofix nếu giá trị map 1:1. Giá trị không map được thì chỉ báo, không sửa ([use-tokens-space](https://atlassian.design/components/eslint-plugin-design-system/use-tokens-space/usage)). Trong package, rule này có `recommended: false` (`dist/cjs/rules/use-tokens-space/index.js`, [npm](https://www.npmjs.com/package/@atlaskit/eslint-plugin-design-system)).
@@ -122,11 +122,11 @@ Token chiều cao mang scope `size`, token padding/gap mang scope `gap` ([functi
 
 **Shopify Polaris: thang dày, vài alias ngữ nghĩa.** `size.ts` có 1, 2, 4, 6, 8, 11, 12, 13, 14, 16, 18, 20, 22, 24, 28, 30, 32, 36, 40, 48, 64, 80…128 ([size.ts](https://github.com/Shopify/polaris/blob/main/polaris-tokens/src/size.ts)). `space-*` chỉ lấy 0, 1, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80…128. Ngoài ra có bốn alias: `space-button-group-gap` (8), `space-card-gap` (16), `space-card-padding` (16), `space-table-cell-padding` (6) ([space.ts](https://github.com/Shopify/polaris/blob/main/polaris-tokens/src/themes/base/space.ts)). Chú ý tên số của Polaris lệch Atlassian (`space-100` = 4px), đúng như vault đã cảnh báo. Enforcement bằng `stylelint-polaris`, đã có trong [[unified-spec-system]].
 
-**Adobe Spectrum: token quan hệ theo component, đang dời sang token ngữ nghĩa.** Thang `spacing-25…1000` = 1, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96. Bên cạnh đó là cả trăm token quan hệ như `text-to-visual-*`, `component-edge-to-text-*`, `component-to-menu-*`, có giá trị riêng cho desktop và mobile. 149 token trong `layout.json` đã `deprecated`, phần lớn trỏ sang `base-gap-*` (4–10px) và `base-padding-{horizontal,vertical}-*`. Các giá trị mới lệch lưới (7, 13, 15, 19px), ví dụ: "Use semantic token base-padding-horizontal-medium instead. Updated to follow Spectrum Future Foundations spacing formula" ([layout.json](https://github.com/adobe/spectrum-design-data/blob/main/packages/tokens/src/layout.json)). Công thức đó tôi không tìm được nguồn công khai (**unverified**). Ý nghĩa với Zweihänder: padding tính theo size của control, giống control tier, và một hệ cỡ Adobe vẫn chưa ổn định lớp này.
+**Adobe Spectrum: token quan hệ theo component, đang dời sang token ngữ nghĩa.** Thang `spacing-25…1000` = 1, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96. Bên cạnh đó là cả trăm token quan hệ như `text-to-visual-*`, `component-edge-to-text-*`, `component-to-menu-*`, có giá trị riêng cho desktop và mobile. 149 token trong `layout.json` đã `deprecated`, phần lớn trỏ sang `base-gap-*` (4–10px) và `base-padding-{horizontal,vertical}-*`. Các giá trị mới lệch lưới (7, 13, 15, 19px), ví dụ: "Use semantic token base-padding-horizontal-medium instead. Updated to follow Spectrum Future Foundations spacing formula" ([layout.json](https://github.com/adobe/spectrum-design-data/blob/main/packages/tokens/src/layout.json)). Công thức đó tôi không tìm được nguồn công khai (**unverified**). Ý nghĩa với Marram: padding tính theo size của control, giống control tier, và một hệ cỡ Adobe vẫn chưa ổn định lớp này.
 
 ## 4. Bảng so sánh
 
-| | Atlassian | Primer | Carbon | Polaris | Spectrum | **Zweihänder** |
+| | Atlassian | Primer | Carbon | Polaris | Spectrum | **Marram** |
 |---|---|---|---|---|---|---|
 | Thang (px) | 0, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80 | 2…128 (19 bậc) | 2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 160 | 0, 1, 2, 4, 6, 8, 12, 16, 20, 24, 32…128 | 1, 2, 4, 6, 8, 12…96 | 4, 6, 8, **10**, 12, 16, 24, 32, 40, 48 (thiếu 2, 20, 64, 80) |
 | Tier dùng | 3 tier, viết trong docs và `description` token | Theo pattern: stack condensed/normal/spacious, controlStack theo size | Không | Không (4 alias) | Token quan hệ theo component, đang chuyển sang base-gap/padding | Không. Control tier lo phần bên trong control |
@@ -136,7 +136,7 @@ Token chiều cao mang scope `size`, token padding/gap mang scope `gap` ([functi
 | Primitive giới hạn giá trị | Box/Stack/Inline/Bleed theo kiểu TS | Stack (React) | Không | Box/InlineStack/BlockStack (**unverified**, chưa đọc lần này) | — | Không có primitive layout |
 | Scope Figma trong nguồn | **unverified** | Có (`size`/`gap` → `WIDTH_HEIGHT`/`GAP`) | **unverified** | **unverified** | **unverified** | Không |
 
-## 5. Phương án cho Zweihänder
+## 5. Phương án cho Marram
 
 ### 5.1 Token: lấp lỗ, không đổi tên
 
@@ -150,7 +150,7 @@ Token chiều cao mang scope `size`, token padding/gap mang scope `gap` ([functi
 
 Giữ cách đặt tên theo Tailwind. Đổi sang tên của Atlassian (`space.100` = 8) thì phải đổi tên khắp nơi, và vi phạm luật của vault mà không đem lại lợi ích nào.
 
-### 5.2 Docs: tier viết theo tên Zweihänder
+### 5.2 Docs: tier viết theo tên Marram
 
 Viết lại `Spacing.mdx` thành ba bảng và một luật ưu tiên:
 
@@ -169,7 +169,7 @@ Những gì lint được với hạ tầng có sẵn (`scripts/stylelint-semant
 2. **Thêm `inset*`, `top/right/bottom/left`, `translate`** vào danh sách của `declaration-strict-value`. Danh sách thuộc tính của Atlassian có cả top/left/right/bottom.
 3. **Không lint tier.** Tier phụ thuộc vào ngữ cảnh mà selector không cho thấy (một `padding: var(--space-8)` là Card `lg` hay một ô bị phình?). Không hệ nào làm, và chính Atlassian xếp "khoảng dọc trong card" vào hai tier. Nếu vẫn muốn một tín hiệu thì có một rule mềm mức `warning`: `src/components/{atomic-elements,buttons,controls,inputs}/**` không được dùng `--space-8+` trong padding/gap. Hiện chỉ Avatar dùng, và dùng làm size. Rule này rẻ nhưng chỉ bắt được trường hợp hiển nhiên.
 
-Margin: Atlassian có `no-margin` nhưng không bật mặc định. Zweihänder có 42 margin (*tự đếm*), phần lớn là `--space-1`. Không đáng làm thành rule. Ghi trong docs "ưu tiên gap ở parent".
+Margin: Atlassian có `no-margin` nhưng không bật mặc định. Marram có 42 margin (*tự đếm*), phần lớn là `--space-1`. Không đáng làm thành rule. Ghi trong docs "ưu tiên gap ở parent".
 
 ### 5.4 Figma: scope thay cho trí nhớ
 
@@ -200,7 +200,7 @@ Như vậy designer chỉ thấy biến spacing khi chỉnh padding/gap. Chi ph�
 
 ## Thử nghiệm trên hai màn (2026-10-19)
 
-Dựng 2 màn bằng component thật của Zweihänder (Revenue and cost dashboard, Products), layout trang chọn spacing theo tier, overlay đo spacing từ DOM đã render. Code: `experiments/spacing-tiers/` (chưa commit). Artifact: https://claude.ai/artifact/XtoWasLNvMVqVrEgzNpXth
+Dựng 2 màn bằng component thật của Marram (Revenue and cost dashboard, Products), layout trang chọn spacing theo tier, overlay đo spacing từ DOM đã render. Code: `experiments/spacing-tiers/` (chưa commit). Artifact: https://claude.ai/artifact/XtoWasLNvMVqVrEgzNpXth
 
 - Tier thu hẹp lựa chọn nhưng không quyết định: "card trong một hàng" ra 16px (`Stats`, summary row) và 24px (chart row), đều Medium. Cần thêm bảng role ngắn (card trong hàng 16, section trang 32, title→description 4).
 - `Table` pad cell 16px (Medium), là giá trị dùng nhiều nhất (>200 lần); Atlassian xếp table cell vào Small. Quyết định density, không phải token.

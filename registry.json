@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "marram",
-  "homepage": "https://ontheshore.biz/zweihander",
+  "homepage": "https://marram.ontheshore.biz",
   "items": [
     {
       "name": "utils",
@@ -49,8 +49,8 @@
       "title": "Theme",
       "description": "Scopes an appearance and token overrides to a subtree.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -74,8 +74,8 @@
       "title": "Button",
       "description": "Button in semantic variants, appearances and sizes; renders a link with href, and any element with render.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -102,9 +102,9 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -125,9 +125,9 @@
       "title": "Text Input",
       "description": "Single-line text field with label, helper text, validation, prefix and suffix, add-ons and buttons inside the field, on Base UI Field.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json"
       ],
       "files": [
         {
@@ -146,9 +146,9 @@
       "title": "Field",
       "description": "Label, required mark, info note and helper text with validation for a control that has none of its own, on Base UI Field.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json"
       ],
       "files": [
         {
@@ -167,8 +167,8 @@
       "title": "Divider",
       "description": "Horizontal or vertical separator line, solid or dashed, in several thicknesses.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -189,8 +189,8 @@
       "title": "Badge",
       "description": "Count or dot that flags something new, inline or floating on another element.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -211,8 +211,8 @@
       "title": "Kbd",
       "description": "Key cap that shows which key to press, alone or as a combination.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -233,12 +233,12 @@
       "title": "Avatar",
       "description": "Round picture of a person with initials and user-icon fallbacks, neutral or any accent hue in subtle or solid, an optional presence dot, and a group that overlaps them with a +n for the rest and optional name tooltips.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/badge.json",
-        "https://ontheshore.biz/zweihander/r/tooltip.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/theme.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/badge.json",
+        "https://marram.ontheshore.biz/r/tooltip.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/theme.json"
       ],
       "files": [
         {
@@ -259,9 +259,9 @@
       "title": "Tag",
       "description": "Short status or category label, status and hue variants and appearances, with an optional remove button.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -282,9 +282,9 @@
       "title": "Toggle Button",
       "description": "Button that stays pressed, on Base UI Toggle; neutral when off, the variant when on.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/button.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/button.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -308,9 +308,9 @@
       "title": "Button Group",
       "description": "A selection control on Base UI Toggle Group: ToggleButtons with exactly one on, set apart with a small gap or joined into one bar.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/toggle-button.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/toggle-button.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -337,8 +337,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -359,9 +359,9 @@
       "title": "Switch",
       "description": "On/off switch with label and helper text, on Base UI Switch and Field.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/choice-field.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/choice-field.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -385,10 +385,10 @@
       "title": "Checkbox",
       "description": "Checkbox with label, helper text and indeterminate state, on Base UI Checkbox and Field.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/choice-field.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/choice-field.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -412,9 +412,9 @@
       "title": "Radio",
       "description": "Radio group from a flat options list, with legend and helper text, on Base UI Radio Group, Field and Fieldset.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/choice-field.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/choice-field.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -438,8 +438,8 @@
       "title": "Card",
       "description": "Surface for related content: elevated, outline or unstyled, in sizes xs and sm; a button with onClick or a link with render.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -463,9 +463,9 @@
       "title": "Textarea",
       "description": "Multi-line text field with auto-size, rows and resize, on the shared input field.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -489,11 +489,11 @@
       "title": "Search",
       "description": "Search field with icon and clear button; Escape clears in every browser, and an optional key such as / focuses it.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/kbd.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/kbd.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -517,9 +517,9 @@
       "title": "Resend button",
       "description": "Internal: the small Resend code / Resend link button shared by OTP Input and the auth templates, disabled with a countdown while it cools down; a failed send starts no cooldown.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/button.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/button.json"
       ],
       "files": [
         {
@@ -535,10 +535,10 @@
       "title": "OTP Input",
       "description": "One-time code entry, one cell per character, with optional grouping and a resend button with cooldown, on Base UI OTP Field.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json",
-        "https://ontheshore.biz/zweihander/r/resend-button.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json",
+        "https://marram.ontheshore.biz/r/resend-button.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -562,11 +562,11 @@
       "title": "Password Input",
       "description": "Password field with a Show / Hide button named after its label, hidden again when the form is sent, and optional rules for a new password, ticked off as the reader types; on Text Input.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/text-input.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/text-input.json"
       ],
       "files": [
         {
@@ -587,10 +587,10 @@
       "title": "Number Input",
       "description": "Number field with stepper buttons, limits and precision, on Base UI Number Field.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -617,10 +617,10 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -639,10 +639,10 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -663,8 +663,8 @@
       "title": "Spinner",
       "description": "Loading indicator: a status, or a progress ring with a value; delay keeps fast loads from flashing it.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -685,8 +685,8 @@
       "title": "Progress Bar",
       "description": "Linear progress on Base UI Progress: determinate or indeterminate, with an optional label and value.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -710,8 +710,8 @@
       "title": "Skeleton",
       "description": "Decorative placeholder in the shape of loading content: circle, square or rounded, with rows.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -732,9 +732,9 @@
       "title": "Link",
       "description": "Inline or standalone link with colour, size, underline, external and disabled states; render prop for router links.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -758,9 +758,9 @@
       "title": "Alert",
       "description": "Page or section message in info, success, warning or danger, subtle/outlined/solid, with optional title, action, close button and live announcement.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -781,8 +781,8 @@
       "title": "Empty State",
       "description": "What an empty list, table or page shows: icon, title as a real heading, description and next action, at a compact or roomy size.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "files": [
         {
@@ -803,8 +803,8 @@
       "title": "Tooltip",
       "description": "Short inverted label on hover or focus, with side and delay, on Base UI Tooltip; TooltipGroup shares the delay.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -828,9 +828,9 @@
       "title": "Popover",
       "description": "Anchored dialog panel with title, description and close button, modal or not, on Base UI Popover.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -854,9 +854,9 @@
       "title": "Modal",
       "description": "Centred dialog with title, description, scrolling body and footer, or an alert dialog for decisions, on Base UI Dialog and Alert Dialog.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -880,12 +880,12 @@
       "title": "Confirm Dialog",
       "description": "Alert dialog that asks before a destructive action: warning icon, the action as a question, its consequence, Cancel with focus, a destructive button, and optional type-to-confirm, on Modal.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/modal.json",
-        "https://ontheshore.biz/zweihander/r/button.json",
-        "https://ontheshore.biz/zweihander/r/text-input.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/modal.json",
+        "https://marram.ontheshore.biz/r/button.json",
+        "https://marram.ontheshore.biz/r/text-input.json"
       ],
       "files": [
         {
@@ -906,9 +906,9 @@
       "title": "Menu",
       "description": "Dropdown of actions, links, checkbox and radio items, groups and submenus from an items array, on Base UI Menu.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -932,9 +932,9 @@
       "title": "Menubar",
       "description": "Row of menus as in a desktop app, File, Edit, View, each opening a Menu flyout, with arrow-key movement along the bar, on Base UI Menubar.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/menu.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/menu.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -958,9 +958,9 @@
       "title": "Breadcrumbs",
       "description": "Navigation trail with the current page marked, collapsible middle and router-friendly links.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -984,10 +984,10 @@
       "title": "Pagination",
       "description": "Previous, next and a stable range of page numbers with ellipses, as buttons or links, with an optional rows summary and rows-per-page select.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/select.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/select.json"
       ],
       "files": [
         {
@@ -1008,8 +1008,8 @@
       "title": "Tabs",
       "description": "Underline or pill tabs with a sliding indicator, icons, vertical orientation and panels, on Base UI Tabs.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -1033,9 +1033,9 @@
       "title": "Toast",
       "description": "Corner notifications with variants, action, timeout, promise and swipe to dismiss: ToastProvider plus useToast(), on Base UI Toast.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -1059,9 +1059,9 @@
       "title": "Inline Alert",
       "description": "One-line message in the flow of a form or section: icon, text in the variant's colour, optional action and live announcement.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -1082,10 +1082,10 @@
       "title": "Error State",
       "description": "What a list, panel or page shows when loading failed: Empty State in the danger tone, with details and a live announcement.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/empty-state.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/empty-state.json"
       ],
       "files": [
         {
@@ -1106,10 +1106,10 @@
       "title": "Success State",
       "description": "What a finished flow shows: Empty State in the success tone, with the next step as its action.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/empty-state.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/empty-state.json"
       ],
       "files": [
         {
@@ -1130,9 +1130,9 @@
       "title": "Collapse",
       "description": "One show/hide section with a text-button trigger, changing label and find-in-page support, on Base UI Collapsible.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -1156,8 +1156,8 @@
       "title": "Slider",
       "description": "Single-value or range slider with label, formatted value, per-thumb names and vertical orientation, on Base UI Slider.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -1181,9 +1181,9 @@
       "title": "Stepper",
       "description": "Progress through ordered steps, horizontal or vertical, with complete/current/upcoming/error states and optional back navigation. A bullets appearance shows only the current step's label over a row of dots, for narrow spaces.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -1204,9 +1204,9 @@
       "title": "Rating",
       "description": "Star rating on native radios, interactive or read-only with fractional stars, sizes and custom value text.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -1227,12 +1227,12 @@
       "title": "Column Chooser",
       "description": "Button that opens a popover listing a table's columns, each with a checkbox to show or hide it, the row header locked, and a Reset to the default set.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/button.json",
-        "https://ontheshore.biz/zweihander/r/checkbox.json",
-        "https://ontheshore.biz/zweihander/r/popover.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/button.json",
+        "https://marram.ontheshore.biz/r/checkbox.json",
+        "https://marram.ontheshore.biz/r/popover.json"
       ],
       "files": [
         {
@@ -1253,13 +1253,13 @@
       "title": "Table",
       "description": "Native table with captions, row headers, sortable columns (aria-sort), row selection, expandable rows, a row actions menu, a total row, resizable columns, sticky header and an empty state.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/button.json",
-        "https://ontheshore.biz/zweihander/r/checkbox.json",
-        "https://ontheshore.biz/zweihander/r/menu.json",
-        "https://ontheshore.biz/zweihander/r/context-menu.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/button.json",
+        "https://marram.ontheshore.biz/r/checkbox.json",
+        "https://marram.ontheshore.biz/r/menu.json",
+        "https://marram.ontheshore.biz/r/context-menu.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -1283,11 +1283,11 @@
       "title": "Charts",
       "description": "Line, area, bar (stacked or grouped) and pie or donut charts in SVG, plus Sparkline and ChartLegend. Coloured by the --color-chart tokens, with a crosshair tooltip, legend toggles and a table view.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/button.json",
-        "https://ontheshore.biz/zweihander/r/table.json",
-        "https://ontheshore.biz/zweihander/r/skeleton.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/button.json",
+        "https://marram.ontheshore.biz/r/table.json",
+        "https://marram.ontheshore.biz/r/skeleton.json"
       ],
       "dependencies": [
         "d3-scale",
@@ -1347,9 +1347,9 @@
       "title": "Calendar",
       "description": "Month grid with full keyboard support, min/max and disabled days, today and locale-aware weeks, on Intl with no date library.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json"
       ],
       "files": [
         {
@@ -1370,11 +1370,11 @@
       "title": "Date Picker",
       "description": "Date and date range fields that take typed dates in the locale's order and open a Calendar in a popover, with optional range presets; submit ISO dates.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json",
-        "https://ontheshore.biz/zweihander/r/calendar.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/input-field.json",
+        "https://marram.ontheshore.biz/r/calendar.json"
       ],
       "dependencies": [
         "@base-ui/react"
@@ -1401,10 +1401,10 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/input-field.json",
-        "https://ontheshore.biz/zweihander/r/select.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/input-field.json",
+        "https://marram.ontheshore.biz/r/select.json"
       ],
       "files": [
         {
@@ -1425,12 +1425,12 @@
       "title": "File Uploader",
       "description": "Drop zone and Choose button over a native file input, with type/size/count checks, a file list, and per-file progress or errors.",
       "registryDependencies": [
-        "https://ontheshore.biz/zweihander/r/utils.json",
-        "https://ontheshore.biz/zweihander/r/tokens.json",
-        "https://ontheshore.biz/zweihander/r/icon.json",
-        "https://ontheshore.biz/zweihander/r/button.json",
-        "https://ontheshore.biz/zweihander/r/progress-bar.json",
-        "https://ontheshore.biz/zweihander/r/spinner.json"
+        "https://marram.ontheshore.biz/r/utils.json",
+        "https://marram.ontheshore.biz/r/tokens.json",
+        "https://marram.ontheshore.biz/r/icon.json",
+        "https://marram.ontheshore.biz/r/button.json",
+        "https://marram.ontheshore.biz/r/progress-bar.json",
+        "https://marram.ontheshore.biz/r/spinner.json"
       ],
       "files": [
         {

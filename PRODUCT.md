@@ -8,7 +8,7 @@ web
 
 ## Users
 
-Enterprise product teams in SaaS, ERP, CRM, fintech and accounting: product designers and front-end developers who install the kit (npm package or the copy-source registry at `/r/`) to build dense application UI. They work in Figma and React side by side, and they need the two to agree.
+Enterprise product teams in SaaS, ERP, CRM, fintech and accounting: product designers and front-end developers who install the kit from the copy-source registry at `/r/` to build dense application UI. They work in Figma and React side by side, and they need the two to agree.
 
 ## Product Purpose
 
@@ -27,7 +27,7 @@ Four things together, none of which a neighbour (shadcn, Radix Themes, Carbon) o
 
 ## Operating Context
 
-- Storybook is the reference (https://zweihander.ontheshore.biz/storybook/); every topic has a hand-written MDX page (Overview, Specs, Guidelines tabs).
+- Storybook is the reference (https://marram.ontheshore.biz/storybook/); every topic has a hand-written MDX page (Overview, Specs, Guidelines tabs).
 - The Playground (`/playground/`) previews components, patterns and templates in device frames with a theme panel and copy-code.
 - Figma file Marram-v0.7.0 mirrors the code: variables, text and effect styles, one page per component, patterns and templates.
 - Component spec source is uiguideline.com Anatomy and Prop list; deviations are written down in the MDX.
@@ -49,7 +49,7 @@ Four things together, none of which a neighbour (shadcn, Radix Themes, Carbon) o
 
 ## Evidence on Hand
 
-- Live docs site and Storybook, the registry, the npm package `marram`.
+- Live docs site and Storybook, the registry.
 - Research notes in `docs/research/` and the vault (spacing, box sizing, app shell surfaces, chart library, Application UI catalogue).
 - No customers, testimonials, adoption numbers or benchmarks exist. Do not invent them.
 

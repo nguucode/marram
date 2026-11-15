@@ -1,16 +1,16 @@
-# Zweihänder theo Atlassian: bỏ mode, đổi ít hơn tưởng
+# Marram theo Atlassian: bỏ mode, đổi ít hơn tưởng
 
-Zweihänder đã gần Atlassian Design System (ADS) hơn giả định ban đầu: thang chữ Default trùng ADS từng cặp size/line-height, Button 32/24px trùng ADS, focus ring 2px/offset 2px trùng ADS, và mọi giá trị spacing role đều nằm trên thang ADS. Việc nâng cấp vì thế gồm hai phần tách rời. Phần một là gỡ density mode: xoá giá trị Compact của **47 token và 8 leading**, prop `density` của `Theme`, toolbar Storybook và 5 mode Compact trong Figma; ở Default không pixel nào đổi, nên 200 visual baseline hiện có chính là bằng chứng hồi quy. Phần hai mới là thay đổi nhìn thấy được: **radius control 8 → 6px, panel 14 → 8/12px; field 32 → 40px; elevation 8 bậc → 2 bậc; bỏ cỡ chữ 11px; Modal padding 16 → 24px; top bar 56 → 48px**. Có ba điểm bản brief đang bỏ qua. Một, ADS không có density mode toàn cục nhưng vẫn giữ compact cục bộ trên ít nhất tám component, nên "theo Atlassian" và "loại bỏ hoàn toàn density" chỉ khớp nhau nếu hiểu density là *mode*, không phải *prop size*. Hai, ADS đặt input 40px cạnh button 32px, một lệch pha mà Atlassian tự xử lý bằng compact input trong toolbar. Ba, ADS là ngoại lệ trong nhóm design system cho enterprise (Salesforce, Cloudscape, Ant đều có mode), và quyết định này đảo ngược dòng định vị "Enterprise density" trong `PRODUCT.md`. Shard không dùng Compact nên chi phí thực tế hôm nay bằng không, nhưng Shard đọc trực tiếp khoảng 160 lần các token số, nên đổi tên token theo `--ds-*` là phương án đắt nhất và không mua được gì. Mọi con số ADS trong báo cáo đọc từ gói npm phát hành ngày 2026-11-09 đến 2026-11-11; trạng thái feature flag trong sản phẩm Atlassian không quan sát được từ tarball.
+Marram đã gần Atlassian Design System (ADS) hơn giả định ban đầu: thang chữ Default trùng ADS từng cặp size/line-height, Button 32/24px trùng ADS, focus ring 2px/offset 2px trùng ADS, và mọi giá trị spacing role đều nằm trên thang ADS. Việc nâng cấp vì thế gồm hai phần tách rời. Phần một là gỡ density mode: xoá giá trị Compact của **47 token và 8 leading**, prop `density` của `Theme`, toolbar Storybook và 5 mode Compact trong Figma; ở Default không pixel nào đổi, nên 200 visual baseline hiện có chính là bằng chứng hồi quy. Phần hai mới là thay đổi nhìn thấy được: **radius control 8 → 6px, panel 14 → 8/12px; field 32 → 40px; elevation 8 bậc → 2 bậc; bỏ cỡ chữ 11px; Modal padding 16 → 24px; top bar 56 → 48px**. Có ba điểm bản brief đang bỏ qua. Một, ADS không có density mode toàn cục nhưng vẫn giữ compact cục bộ trên ít nhất tám component, nên "theo Atlassian" và "loại bỏ hoàn toàn density" chỉ khớp nhau nếu hiểu density là *mode*, không phải *prop size*. Hai, ADS đặt input 40px cạnh button 32px, một lệch pha mà Atlassian tự xử lý bằng compact input trong toolbar. Ba, ADS là ngoại lệ trong nhóm design system cho enterprise (Salesforce, Cloudscape, Ant đều có mode), và quyết định này đảo ngược dòng định vị "Enterprise density" trong `PRODUCT.md`. Shard không dùng Compact nên chi phí thực tế hôm nay bằng không, nhưng Shard đọc trực tiếp khoảng 160 lần các token số, nên đổi tên token theo `--ds-*` là phương án đắt nhất và không mua được gì. Mọi con số ADS trong báo cáo đọc từ gói npm phát hành ngày 2026-11-09 đến 2026-11-11; trạng thái feature flag trong sản phẩm Atlassian không quan sát được từ tarball.
 
 ## Core mới: giữ tên token, đổi giá trị, chỉ màu là phải viết lại
 
-Kết luận cho phần core: giữ nguyên tên token của Zweihänder, đổi giá trị về ADS, thêm ba bước spacing và một thang border-width còn thiếu, thu elevation về hai bậc. Cấu trúc màu là nền tảng duy nhất mà theo ADS đồng nghĩa với viết lại, và tôi khuyên không làm (lý do ở cuối mục).
+Kết luận cho phần core: giữ nguyên tên token của Marram, đổi giá trị về ADS, thêm ba bước spacing và một thang border-width còn thiếu, thu elevation về hai bậc. Cấu trúc màu là nền tảng duy nhất mà theo ADS đồng nghĩa với viết lại, và tôi khuyên không làm (lý do ở cuối mục).
 
 ### Spacing: thang số đã khớp, chỉ lệch ở 10px và ba bước thiếu
 
-ADS dùng base 8px (`space.100`), 14 token dương từ 0 đến 80px, không có bước 10px ([atlassian-spacing.js](https://unpkg.com/@atlaskit/tokens@20.11.0/dist/esm/artifacts/themes/atlassian-spacing.js); [atlassian.design/foundations/spacing](https://atlassian.design/foundations/spacing)). Zweihänder có 11 bước số và 6 role token mang hai giá trị Default/Compact (`tokens/semantic.json:301-321`).
+ADS dùng base 8px (`space.100`), 14 token dương từ 0 đến 80px, không có bước 10px ([atlassian-spacing.js](https://unpkg.com/@atlaskit/tokens@20.11.0/dist/esm/artifacts/themes/atlassian-spacing.js); [atlassian.design/foundations/spacing](https://atlassian.design/foundations/spacing)). Marram có 11 bước số và 6 role token mang hai giá trị Default/Compact (`tokens/semantic.json:301-321`).
 
-| Token Zweihänder | Hiện tại (Default / Compact) | ADS tương ứng | Giá trị mới |
+| Token Marram | Hiện tại (Default / Compact) | ADS tương ứng | Giá trị mới |
 |---|---|---|---|
 | `--space-0-5` | 2 | `space.025` 2 | 2 |
 | `--space-1` | 4 | `space.050` 4 | 4 |
@@ -30,11 +30,11 @@ ADS dùng base 8px (`space.100`), 14 token dương từ 0 đến 80px, không c�
 | `--space-container` | 24 / 16 | 24 | 24 |
 | `--space-section` | 24 / 20 | 24 (lề trang desktop của ADS là 32) | 24, xem lại khi làm AppShell |
 
-Sáu role token nên giữ. Chúng được đọc nhiều hơn token số trong CSS component (`--space-group` 74 lần, `--space-inline` 73 lần), và ADS đang tự đi về hướng này với lớp semantic `space.gap.*` / `space.inset.*`. Lớp đó vẫn ở trạng thái `experimental` và đã bị đổi tên và đổi giá trị một lần ở bản 20.10.0 ([CHANGELOG @atlaskit/tokens](https://unpkg.com/@atlaskit/tokens@20.11.0/CHANGELOG.md)), nên sao chép tên của nó bây giờ là buộc Zweihänder vào một mục tiêu đang di chuyển.
+Sáu role token nên giữ. Chúng được đọc nhiều hơn token số trong CSS component (`--space-group` 74 lần, `--space-inline` 73 lần), và ADS đang tự đi về hướng này với lớp semantic `space.gap.*` / `space.inset.*`. Lớp đó vẫn ở trạng thái `experimental` và đã bị đổi tên và đổi giá trị một lần ở bản 20.10.0 ([CHANGELOG @atlaskit/tokens](https://unpkg.com/@atlaskit/tokens@20.11.0/CHANGELOG.md)), nên sao chép tên của nó bây giờ là buộc Marram vào một mục tiêu đang di chuyển.
 
 ### Box sizing và chiều cao control: ramp giữ nguyên, thêm bậc 40 cho field
 
-ADS không có token chiều cao; 32/24px của Button và 40/32px của field là giá trị cứng trong CSS component ([button-base.compiled.css](https://unpkg.com/@atlaskit/button@25.8.1/dist/esm/new-button/variants/shared/button-base.compiled.css); [@atlaskit/react-select](https://registry.npmjs.org/@atlaskit/react-select/latest)). Mọi kích thước control ADS đọc được (16, 20, 24, 32, 40, 48) đều rơi đúng vào box ramp hiện có của Zweihänder, nên ramp và phép kiểm "mọi kích thước cố định là một bước box" trong `scripts/build-tokens.mjs` sống sót; chỉ vòng lặp theo density và 5 ngoại lệ `@compact` trong `OFF_RAMP` biến mất.
+ADS không có token chiều cao; 32/24px của Button và 40/32px của field là giá trị cứng trong CSS component ([button-base.compiled.css](https://unpkg.com/@atlaskit/button@25.8.1/dist/esm/new-button/variants/shared/button-base.compiled.css); [@atlaskit/react-select](https://registry.npmjs.org/@atlaskit/react-select/latest)). Mọi kích thước control ADS đọc được (16, 20, 24, 32, 40, 48) đều rơi đúng vào box ramp hiện có của Marram, nên ramp và phép kiểm "mọi kích thước cố định là một bước box" trong `scripts/build-tokens.mjs` sống sót; chỉ vòng lặp theo density và 5 ngoại lệ `@compact` trong `OFF_RAMP` biến mất.
 
 | Token | Hiện tại (Default / Compact) | Giá trị mới | Ghi chú theo ADS |
 |---|---|---|---|
@@ -53,9 +53,9 @@ ADS không có token chiều cao; 32/24px của Button và 40/32px của field l
 
 ### Typography: thang đã trùng, khác ở cỡ 11px và weight
 
-Thang Default của Zweihänder trùng ADS ở cả bảy heading và ba body: 32/36, 28/32, 24/28, 20/24, 16/20, 14/20, 12/16 và 16/24, 14/20, 12/16 ([atlassian-typography.js](https://unpkg.com/@atlaskit/tokens@20.11.0/dist/esm/artifacts/themes/atlassian-typography.js); `tokens/semantic.json:413`). Việc phải làm là xoá 8 giá trị Compact (ví dụ body 13/18), và xử lý ba khác biệt còn lại.
+Thang Default của Marram trùng ADS ở cả bảy heading và ba body: 32/36, 28/32, 24/28, 20/24, 16/20, 14/20, 12/16 và 16/24, 14/20, 12/16 ([atlassian-typography.js](https://unpkg.com/@atlaskit/tokens@20.11.0/dist/esm/artifacts/themes/atlassian-typography.js); `tokens/semantic.json:413`). Việc phải làm là xoá 8 giá trị Compact (ví dụ body 13/18), và xử lý ba khác biệt còn lại.
 
-| Hạng mục | Zweihänder hiện tại | ADS | Giá trị mới đề xuất |
+| Hạng mục | Marram hiện tại | ADS | Giá trị mới đề xuất |
 |---|---|---|---|
 | Cỡ nhỏ nhất | `--text-body-xs` 11/16 (Badge, Kbd) | 12/16; bản refresh nâng sàn từ 11 lên 12px | alias về 12/16 rồi deprecate |
 | Weight heading | literal 500–700; Modal title 500 | 653, hoặc 600 ở theme "finesse" | 600 |
@@ -70,7 +70,7 @@ Weight 653 chỉ render đúng với variable font Atlassian Sans; bản thân A
 
 ADS gán radius theo vai trò của phần tử, không theo kích thước: 2 cho chi tiết nhỏ, 4 cho phần tử phụ và button compact, 6 cho phần tử tương tác, 8 cho container và popup, 12 cho modal và bảng, 9999 cho avatar ([atlassian-shape.js](https://unpkg.com/@atlaskit/tokens@20.11.0/dist/esm/artifacts/themes/atlassian-shape.js); [atlassian.design/foundations/radius](https://atlassian.design/foundations/radius)). Trang radius ghi rõ các giá trị này "subject to change".
 
-| Hạng mục | Zweihänder hiện tại | ADS | Giá trị mới |
+| Hạng mục | Marram hiện tại | ADS | Giá trị mới |
 |---|---|---|---|
 | `--radius-control` / `--radius-field` | 8 | `radius.medium` 6 | 6 |
 | Control `sm` (Button sm, Tag) | 6 | `radius.small` 4 | 4 |
@@ -92,9 +92,9 @@ Radius đụng một tính năng mà brief chưa nhắc: `Theme` có ba preset `
 
 ### Cấu trúc color token: đừng viết lại
 
-ADS có 471 CSS variable mỗi theme theo ngữ pháp `color.<property>.<role>[.<emphasis>][.<state>]`, với fill trung tính là màu alpha để dùng được trên mọi surface ([atlassian-light.js](https://unpkg.com/@atlaskit/tokens@20.11.0/dist/esm/artifacts/themes/atlassian-light.js)). Zweihänder có 125 token mỗi mode theo kiểu shadcn (cặp surface + `-foreground`), cộng 17 accent × 9 gray đổi lúc chạy, với kiểm tra tương phản lúc build cho từng palette (`tokens/semantic.json:3-259`; `scripts/build-tokens.mjs:41-93`).
+ADS có 471 CSS variable mỗi theme theo ngữ pháp `color.<property>.<role>[.<emphasis>][.<state>]`, với fill trung tính là màu alpha để dùng được trên mọi surface ([atlassian-light.js](https://unpkg.com/@atlaskit/tokens@20.11.0/dist/esm/artifacts/themes/atlassian-light.js)). Marram có 125 token mỗi mode theo kiểu shadcn (cặp surface + `-foreground`), cộng 17 accent × 9 gray đổi lúc chạy, với kiểm tra tương phản lúc build cho từng palette (`tokens/semantic.json:3-259`; `scripts/build-tokens.mjs:41-93`).
 
-| Khía cạnh | Zweihänder | ADS | Hệ quả nếu theo ADS |
+| Khía cạnh | Marram | ADS | Hệ quả nếu theo ADS |
 |---|---|---|---|
 | Ngữ pháp | vai trò surface: `primary`, `muted`, `card`, `destructive` | thuộc tính trước: `text.*`, `icon.*`, `border.*`, `background.*` | đổi tên toàn bộ 125 token, vỡ mọi file Shard copy |
 | Trạng thái | `hover-overlay` chung | `.hovered` / `.pressed` trên từng token | thêm khoảng 2 token cho mỗi nền |
@@ -106,9 +106,9 @@ Hai thứ đáng mượn mà không phải viết lại: fill trung tính dạng
 
 ## Từng component: field, overlay và shell đổi nhiều nhất, Button gần như đứng yên
 
-Số liệu ADS dưới đây đọc từ `dist/es2019` và CSS đã compile của tarball npm, không phải từ trang docs hay Figma. Chiều cao 40px của Textfield là phép cộng (1 border + 1 + 8 + 20 + 8 + 1 + 1) khớp với `min-height: 40px` ghi rõ trong Select, không phải một khai báo `height` ([@atlaskit/textfield@10.3.1](https://registry.npmjs.org/@atlaskit/textfield/-/textfield-10.3.1.tgz); [@atlaskit/react-select](https://registry.npmjs.org/@atlaskit/react-select/latest)). Số liệu Zweihänder lấy từ `.module.css` của từng component ở commit `b9eb7a75`.
+Số liệu ADS dưới đây đọc từ `dist/es2019` và CSS đã compile của tarball npm, không phải từ trang docs hay Figma. Chiều cao 40px của Textfield là phép cộng (1 border + 1 + 8 + 20 + 8 + 1 + 1) khớp với `min-height: 40px` ghi rõ trong Select, không phải một khai báo `height` ([@atlaskit/textfield@10.3.1](https://registry.npmjs.org/@atlaskit/textfield/-/textfield-10.3.1.tgz); [@atlaskit/react-select](https://registry.npmjs.org/@atlaskit/react-select/latest)). Số liệu Marram lấy từ `.module.css` của từng component ở commit `b9eb7a75`.
 
-| Component | ADS (mặc định / compact) | Zweihänder hiện tại (`md` / `sm`) | Chênh lệch phải xử lý |
+| Component | ADS (mặc định / compact) | Marram hiện tại (`md` / `sm`) | Chênh lệch phải xử lý |
 |---|---|---|---|
 | Button | 32 / 24 cao; pad-inline 12 / 12; gap icon 6; radius 6 / 4; 14/20 weight 500 ở cả hai | 32 / 24; pad 12 / 8; gap 8 / 6; radius 8 / 6; `sm` dùng 12/16 | radius, gap, `sm` pad 8 → 12 và chữ 12 → 14 |
 | IconButton | 32×32 / 24×24, radius 6 / 4 | vuông theo `aspect-ratio` | chỉ radius |
@@ -138,13 +138,13 @@ Số liệu ADS dưới đây đọc từ `dist/es2019` và CSS đã compile c�
 
 Nguồn ADS theo nhóm: Button ([@atlaskit/button@25.8.1](https://registry.npmjs.org/@atlaskit/button/-/button-25.8.1.tgz)), form ([@atlaskit/form@18.3.3](https://registry.npmjs.org/@atlaskit/form/-/form-18.3.3.tgz), [checkbox](https://registry.npmjs.org/@atlaskit/checkbox/-/checkbox-19.3.2.tgz), [toggle](https://registry.npmjs.org/@atlaskit/toggle/-/toggle-17.3.5.tgz)), hiển thị dữ liệu ([tag](https://registry.npmjs.org/@atlaskit/tag/-/tag-17.1.2.tgz), [badge](https://registry.npmjs.org/@atlaskit/badge/-/badge-22.0.0.tgz), [avatar](https://registry.npmjs.org/@atlaskit/avatar/-/avatar-30.1.0.tgz), [dynamic-table](https://registry.npmjs.org/@atlaskit/dynamic-table/-/dynamic-table-19.3.8.tgz), [tabs](https://registry.npmjs.org/@atlaskit/tabs/-/tabs-21.3.1.tgz)), overlay ([modal-dialog](https://registry.npmjs.org/@atlaskit/modal-dialog/-/modal-dialog-17.2.4.tgz), [dropdown-menu](https://registry.npmjs.org/@atlaskit/dropdown-menu/-/dropdown-menu-21.3.1.tgz), [flag](https://registry.npmjs.org/@atlaskit/flag/-/flag-19.0.4.tgz), [drawer](https://registry.npmjs.org/@atlaskit/drawer/-/drawer-14.3.11.tgz)), navigation ([navigation-system](https://registry.npmjs.org/@atlaskit/navigation-system/-/navigation-system-11.7.6.tgz), [side-nav-items](https://registry.npmjs.org/@atlaskit/side-nav-items/latest)), icon ([atlassian.design/foundations/iconography](https://atlassian.design/foundations/iconography)).
 
-Ba chỗ trong bảng cần đọc kỹ hơn con số. **Table đi ngược trực giác**: hàng của ADS dynamic table tối thiểu 28px theo nội dung, tức dày hơn cả Compact hiện tại của Zweihänder (36px). Bỏ density mode mà theo đúng spec bảng của ADS thì bảng không thưa đi mà dày lên: cùng một chiều cao chứa nhiều hơn khoảng 70% số hàng so với Default 48px. Cái giá là control trong hàng: Button 32px đẩy hàng lên 40px, và đó là lý do ADS ghi Button compact là "for tables" ([atlassian.design/components/button/examples](https://atlassian.design/components/button/examples)). Package `@atlaskit/table` mới hơn chưa được đọc, nên spec bảng này là của dynamic-table. **Menu có hai đáp án trong chính ADS**: dropdown item mới cao 36/32 theo padding, `@atlaskit/menu` cao 40/32 theo `min-height`; đường nào đang là mặc định chưa được truy vết. **Field `sm` 24px của Zweihänder không có tương ứng trong ADS**: field nhỏ nhất của ADS là 32px.
+Ba chỗ trong bảng cần đọc kỹ hơn con số. **Table đi ngược trực giác**: hàng của ADS dynamic table tối thiểu 28px theo nội dung, tức dày hơn cả Compact hiện tại của Marram (36px). Bỏ density mode mà theo đúng spec bảng của ADS thì bảng không thưa đi mà dày lên: cùng một chiều cao chứa nhiều hơn khoảng 70% số hàng so với Default 48px. Cái giá là control trong hàng: Button 32px đẩy hàng lên 40px, và đó là lý do ADS ghi Button compact là "for tables" ([atlassian.design/components/button/examples](https://atlassian.design/components/button/examples)). Package `@atlaskit/table` mới hơn chưa được đọc, nên spec bảng này là của dynamic-table. **Menu có hai đáp án trong chính ADS**: dropdown item mới cao 36/32 theo padding, `@atlaskit/menu` cao 40/32 theo `min-height`; đường nào đang là mặc định chưa được truy vết. **Field `sm` 24px của Marram không có tương ứng trong ADS**: field nhỏ nhất của ADS là 32px.
 
 Các component sau không có spec ADS trong ghi chú nghiên cứu và phải tự suy từ foundation: Card, Calendar, Stepper, Spinner, Skeleton, Rating, Slider, ColorPicker, FileUploader, OTPInput, CommandPalette, Carousel, Accordion, cùng toàn bộ 29 pattern và các template. Chúng chiếm phần lớn trong 267 lượt đọc token đổi theo density ở patterns và templates.
 
 ## Gỡ density: bề mặt chức năng nhỏ, bề mặt quyết định lớn
 
-Density trong Zweihänder là một công tắc token hai mode đặt qua `data-density`; không CSS component nào rẽ nhánh theo density (`src/tokens.css:730-744`). Vì vậy 356 lần xuất hiện của chữ "density" trong 68 file co lại thành một danh sách ngắn những chỗ có hành vi.
+Density trong Marram là một công tắc token hai mode đặt qua `data-density`; không CSS component nào rẽ nhánh theo density (`src/tokens.css:730-744`). Vì vậy 356 lần xuất hiện của chữ "density" trong 68 file co lại thành một danh sách ngắn những chỗ có hành vi.
 
 | Lớp | File | Việc phải làm |
 |---|---|---|
@@ -168,7 +168,7 @@ Thứ tự là điểm đáng giá nhất của phần này. Gỡ mode trước 
 
 ADS không phản đối density; ADS hoãn nó. Trang spacing vẫn ghi hệ spacing "lays a foundation for ... customisable UI density in the future", nguyên văn từ thông báo tháng 1 năm 2023, và chưa có mode nào được phát hành ([atlassian.design/foundations/spacing](https://atlassian.design/foundations/spacing); [thông báo spacing scale](https://community.developer.atlassian.com/t/introducing-the-spacing-scale-the-beginnings-of-an-atlassian-spacing-system/65393)). Không tìm thấy phát biểu công khai nào của Atlassian giải thích vì sao không có mode. Câu đúng để viết vào vault là "ADS phát hành một thang và xử lý độ chặt cục bộ", không phải "Atlassian cho rằng density mode là sai".
 
-Compact cục bộ vẫn sống khoẻ trong ADS. Button, IconButton, Textfield (`isCompact`), Textarea, Select, DatePicker, Dropdown menu và Menu đều giữ prop compact, và bản mới còn thêm `spacious` cho Lozenge và Dropdown; không prop nào bị deprecate trong các bản đã đọc. Compact của ADS luôn là trừ 8px chiều cao: field 40 → 32, button 32 → 24, menu item 40 → 32. `size="sm"` 24px của Zweihänder chính là Button compact của ADS. Vì thế "loại bỏ hoàn toàn density" phải được định nghĩa là xoá *mode và token hai giá trị*, giữ *prop `size`*. Xoá luôn `size="sm"` là đi xa hơn chính ADS và tước của bảng lẫn toolbar lối thoát duy nhất.
+Compact cục bộ vẫn sống khoẻ trong ADS. Button, IconButton, Textfield (`isCompact`), Textarea, Select, DatePicker, Dropdown menu và Menu đều giữ prop compact, và bản mới còn thêm `spacious` cho Lozenge và Dropdown; không prop nào bị deprecate trong các bản đã đọc. Compact của ADS luôn là trừ 8px chiều cao: field 40 → 32, button 32 → 24, menu item 40 → 32. `size="sm"` 24px của Marram chính là Button compact của ADS. Vì thế "loại bỏ hoàn toàn density" phải được định nghĩa là xoá *mode và token hai giá trị*, giữ *prop `size`*. Xoá luôn `size="sm"` là đi xa hơn chính ADS và tước của bảng lẫn toolbar lối thoát duy nhất.
 
 Có hai thứ mang bản chất density mà brief không nêu tên. Thứ nhất là prop `density: 'sm' | 'md'` của `Table`, một khái niệm tách biệt với mode nhưng trùng tên, đang được dùng ở 3 màn hình CRM demo, 2 chart và Shard. Vault đã ghi nhận sự trùng tên này là việc riêng; sau khi mode biến mất, prop này là chỗ duy nhất còn chữ "density" trong API. Thứ hai là `--scaling` (90–110%) nhân mọi token độ dài, kể cả chiều cao control. ADS không có tương đương ổn định, chỉ có theme `UNSAFE-*` thử nghiệm. Nếu mục tiêu là "một thang duy nhất như ADS" thì scaling là density dưới tên khác; nếu mục tiêu chỉ là bỏ mode Compact thì scaling ở lại và Figma còn 5 mode.
 
@@ -217,7 +217,7 @@ Giai đoạn 1 có thể phát hành độc lập và có giá trị ngay cả k
 | 2 | "Loại bỏ hoàn toàn density" gồm những gì? | (A) chỉ mode và token hai giá trị. (B) thêm prop `size="sm"` trên control. | A. B đi xa hơn ADS, vốn ghi compact là "for tables". |
 | 3 | `--scaling` 90–110% ở lại? | giữ / bỏ | Giữ ở giai đoạn 1 để không trộn hai thay đổi; quyết riêng. Bỏ thì Figma `Size` còn 1 mode và `Theme` mất thêm một prop. |
 | 4 | Table: theo hàng 28px của ADS, và prop `density` tên gì? | (A) cell pad 4×8, hàng theo nội dung, đổi prop thành `size`. (B) giữ 48/40, chỉ đổi tên. (C) giữ nguyên. | A về spec, đổi tên theo hai bước deprecate. Shard dùng `density="sm"` nên phải sửa cùng lúc. Cần đọc `@atlaskit/table` trước khi chốt số. |
-| 5 | Đổi tên token theo ADS? | giữ tên Zweihänder / đổi sang kiểu `space.100` | Giữ tên. Đổi tên vỡ khoảng 160 chỗ đọc ở Shard và mọi file copy, không đổi một pixel nào. |
+| 5 | Đổi tên token theo ADS? | giữ tên Marram / đổi sang kiểu `space.100` | Giữ tên. Đổi tên vỡ khoảng 160 chỗ đọc ở Shard và mọi file copy, không đổi một pixel nào. |
 | 6 | Theo màu và ngữ pháp màu của ADS? | (A) chỉ box sizing. (B) mượn alpha neutral và dark surface. (C) theo toàn bộ 471 token và palette. | A hoặc B. C xoá 17 accent × 9 gray và kiểm tra tương phản lúc build, tức xoá khác biệt chính của kit. |
 | 7 | Typeface và weight? | Atlassian Sans + 653 / `system-ui` + 600 | `system-ui` + 600. Giấy phép Atlassian Sans chưa rõ; 653 không render ngoài font đó. |
 | 8 | Radius preset của `Theme` (`sharp`, `full-rounded`)? | bỏ / giữ, với `rounded` = thang ADS | Giữ nếu Theme customization còn là định vị; chấp nhận hai preset kia lệch ADS. Dù chọn gì, công thức radius phải viết lại để sinh ra 2 và 4. |
@@ -227,6 +227,6 @@ Bốn câu nhỏ hơn có thể chốt trong lúc làm: focus của field theo i
 
 ## Conclusion
 
-Nghiên cứu này đổi hình dạng bài toán. Nó bắt đầu như một cuộc thay nền móng và kết thúc như hai việc rất khác nhau về rủi ro: một phép xoá gần như cơ học, tự chứng minh được bằng baseline hiện có, và một chuỗi thay đổi giá trị mà độ lớn phụ thuộc gần như hoàn toàn vào một câu trả lời, field 40 hay 32. Nếu câu trả lời là 32, Zweihänder đã là "ADS compact" ở tầng control và phần còn lại chủ yếu là radius, elevation và padding của overlay. Nếu là 40, mọi form, toolbar và pattern đều đổi nhịp dọc, và chính lúc đó nhu cầu compact cục bộ mà brief muốn loại bỏ sẽ quay lại dưới dạng `size="sm"` ở mọi filter bar.
+Nghiên cứu này đổi hình dạng bài toán. Nó bắt đầu như một cuộc thay nền móng và kết thúc như hai việc rất khác nhau về rủi ro: một phép xoá gần như cơ học, tự chứng minh được bằng baseline hiện có, và một chuỗi thay đổi giá trị mà độ lớn phụ thuộc gần như hoàn toàn vào một câu trả lời, field 40 hay 32. Nếu câu trả lời là 32, Marram đã là "ADS compact" ở tầng control và phần còn lại chủ yếu là radius, elevation và padding của overlay. Nếu là 40, mọi form, toolbar và pattern đều đổi nhịp dọc, và chính lúc đó nhu cầu compact cục bộ mà brief muốn loại bỏ sẽ quay lại dưới dạng `size="sm"` ở mọi filter bar.
 
 Điều brief chưa tính đến là Table. Theo đúng spec ADS, bảng dày hơn Compact hiện tại, nên thứ mất đi khi bỏ mode là độ chặt của form và shell chứ không phải của danh sách. Với một CRM, đó là đánh đổi chấp nhận được, miễn là độ chặt của hàng trở thành trạng thái do sản phẩm giữ (theo người dùng, theo view, như backlog của Jira) thay vì thuộc tính của theme. Kit chỉ cần lộ ra prop; Shard quyết định khi nào bật.
