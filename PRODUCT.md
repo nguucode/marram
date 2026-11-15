@@ -44,7 +44,7 @@ Four things together, none of which a neighbour (shadcn, Radix Themes, Carbon) o
 ## Brand Commitments
 
 - Name: Marram (with the umlaut).
-- Logo: Modular M (2026-11-14): two Ink `#16181D` pillars and a `#2563EB` diamond make an M; `public/logo.svg` (symbol), `public/favicon.svg` (tile). The full kit (lockups, app icons, guide) lives in the vault.
+- Logo (2026-11-15): the Marram app icon is the only mark: a dark squircle tile with two white pillars and a blue `#2563EB` diamond making an M. There is no bare symbol without the tile. `public/logo.svg` (icon), `public/favicon.svg` (same icon, no outer margin). The full kit (lockups, app icons, guide) lives in the vault.
 - Docs and public copy are English. Voice cuts complexity: plain, technical, no hype.
 
 ## Evidence on Hand
