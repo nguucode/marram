@@ -1,22 +1,22 @@
 # Issue tracker: Obsidian vault (markdown)
 
-Issues and specs for this repo live as markdown files in the vault, not in the repo: `/Volumes/KAFKA/Vault/10-projects/zweihander/`.
+Issues and specs for this repo live as markdown files in the vault, not in the repo: `/Volumes/KAFKA/Vault/10-projects/marram/`.
 
 Before writing there, read `/Volumes/KAFKA/Vault/CLAUDE.md` (frontmatter, `_context.md`, `_system/agent-log.md`). Vault content is written in Vietnamese.
 
 ## Conventions
 
-- One feature per directory: `/Volumes/KAFKA/Vault/10-projects/zweihander/<feature-slug>/` (existing example: `v1-plan/`)
-- The spec is `/Volumes/KAFKA/Vault/10-projects/zweihander/<feature-slug>/<feature-slug>.md`
-- Implementation issues are one file per ticket at `/Volumes/KAFKA/Vault/10-projects/zweihander/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01`, never a single combined tickets file
+- One feature per directory: `/Volumes/KAFKA/Vault/10-projects/marram/<feature-slug>/` (existing example: `v1-plan/`)
+- The spec is `/Volumes/KAFKA/Vault/10-projects/marram/<feature-slug>/<feature-slug>.md`
+- Implementation issues are one file per ticket at `/Volumes/KAFKA/Vault/10-projects/marram/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01`, never a single combined tickets file
 - Each issue file starts with vault frontmatter (`description`, `type: issue`, `status`, `updated`, `access`, `tags: [marram]`), then `Type:`, `Status:`, `Blocked by:`, `Mode:` lines (see `v1-plan/issues/01-*.md`)
 - Triage state is the `Status:` line (role strings in `triage-labels.md`)
 - Comments and conversation history append to the bottom of the file under a `## Comments` heading
-- Board view: `/Volumes/KAFKA/Vault/10-projects/zweihander/zweihander-kanban.md`
+- Board view: `/Volumes/KAFKA/Vault/10-projects/marram/marram-kanban.md`
 
 ## When a skill says "publish to the issue tracker"
 
-Create a new file under `/Volumes/KAFKA/Vault/10-projects/zweihander/<feature-slug>/` (creating the directory if needed), then add a line to `_system/agent-log.md`.
+Create a new file under `/Volumes/KAFKA/Vault/10-projects/marram/<feature-slug>/` (creating the directory if needed), then add a line to `_system/agent-log.md`.
 
 ## When a skill says "fetch the relevant ticket"
 
@@ -26,8 +26,8 @@ Read the file at the referenced path. The user will normally pass the path or th
 
 Used by `/wayfinder`. The **map** is a file with one **child** file per ticket.
 
-- **Map**: `/Volumes/KAFKA/Vault/10-projects/zweihander/<effort>/<effort>-wayfinder-map.md` (Notes / Decisions-so-far / Fog body).
-- **Child ticket**: `/Volumes/KAFKA/Vault/10-projects/zweihander/<effort>/issues/NN-<slug>.md`, numbered from `01`. `Type:` is `research`/`prototype`/`grilling`/`task`; `Status:` is `claimed`/`resolved`.
+- **Map**: `/Volumes/KAFKA/Vault/10-projects/marram/<effort>/<effort>-wayfinder-map.md` (Notes / Decisions-so-far / Fog body).
+- **Child ticket**: `/Volumes/KAFKA/Vault/10-projects/marram/<effort>/issues/NN-<slug>.md`, numbered from `01`. `Type:` is `research`/`prototype`/`grilling`/`task`; `Status:` is `claimed`/`resolved`.
 - **Blocking**: a `Blocked by: NN, NN` line near the top. A ticket is unblocked when every file it lists is `resolved`.
 - **Frontier**: scan `issues/` for files that are open, unblocked, and unclaimed; first by number wins.
 - **Claim**: set `Status: claimed` and save before any work.

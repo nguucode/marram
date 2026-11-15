@@ -11,7 +11,7 @@ Before starting, read:
 - Component (`src/components/<category>/`): [components/component.md](components/component.md)
 - Example walking every section with Button: [components/example-button.md](components/example-button.md)
 
-The source decisions live in the vault (Definition of done, API conventions, Figma's role): `/Volumes/KAFKA/Vault/10-projects/zweihander/v1-plan/issues/04-definition-of-done.md`, `05-api-conventions.md`, `09-figma-role.md`. This file is how those decisions are carried out. If this file and the vault disagree, the vault is right: tell the user and fix this file.
+The source decisions live in the vault (Definition of done, API conventions, Figma's role): `/Volumes/KAFKA/Vault/10-projects/marram/v1-plan/issues/04-definition-of-done.md`, `05-api-conventions.md`, `09-figma-role.md`. This file is how those decisions are carried out. If this file and the vault disagree, the vault is right: tell the user and fix this file.
 
 ## 0. Classify
 
@@ -94,7 +94,6 @@ Breaking change: fix `argTypes` (and `### Differences from the spec` if any) **f
 - A file with a hook or state: the first line is `'use client'`.
 - Comments explain *why*, they do not restate the code.
 - Update `registry.json`. The description **does not state counts** (do not write "four sizes"), because counts drift when the code changes.
-- Export in `package.json#exports`, entries in `vite.lib.config.ts` and `tsconfig.build.json`.
 - Minimum hit area 44×44 under `pointer: coarse`, by extending the hit area, not enlarging the visible part.
 
 **Gate:** these commands are all green.
@@ -160,7 +159,7 @@ Checklist to paste into the PR description:
 ```
 - [ ] Classify: <Name> — <new|enhance> — <breaking|non-breaking> — <status>
 - [ ] MDX: 3 tabs Overview / Specs / Guidelines, `docs:check` green, props in `argTypes`
-- [ ] Code: tokens only, 'use client', registry (no counts), exports
+- [ ] Code: tokens only, 'use client', registry (no counts)
 - [ ] Story + play for each Accessibility sentence; a11y error
 - [ ] tsc, lint, tokens:check, registry:check, vitest storybook (3 browsers), vitest visual (CI)
 - [ ] Changeset (or --empty)

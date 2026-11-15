@@ -49,4 +49,3 @@ jobs:
           name: visual-diffs
           path: .vitest-attachments
           if-no-files-found: ignore
-      - run: npm run build:lib
