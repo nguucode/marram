@@ -260,7 +260,7 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
 
 
 /* ---- design-system content ---- */
-.numbers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; text-align: center; padding: 40px 24px; border-block: 1px solid var(--line); }
+.numbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; padding: 40px 24px; border-block: 1px solid var(--line); }
 .numbers b { display: block; font: 500 clamp(36px, 4vw, 52px)/1.05 var(--sans); letter-spacing: -0.04em; color: oklch(48% 0.16 var(--acc-h)); font-variant-numeric: tabular-nums; transition: color 1.2s var(--ease); }
 .numbers span { display: block; font-weight: 600; margin-block-start: 6px; }
 .numbers small { display: block; color: var(--muted); font-size: 14px; }
@@ -353,8 +353,8 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
 .found-radius .card-s { width: 100%; height: 70px; border: 1px solid var(--line); background: var(--white); }
 .found-elev { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; width: min(620px, 100%); }
 .found-elev div { height: 90px; border-radius: 12px; background: var(--white); display: grid; place-items: end start; padding: 10px; font: 12px var(--mono); color: var(--muted); }
-@media (max-width: 1040px) { .numbers { grid-template-columns: repeat(3, 1fr); } .cgrid { grid-template-columns: repeat(2, 1fr); } .parity { grid-template-columns: 1fr; } }
-@media (max-width: 700px) { .numbers { grid-template-columns: 1fr 1fr; } .cgrid { grid-template-columns: 1fr; } .cgrid .tile.wide { grid-column: auto; } .tpl-grid { grid-template-columns: 1fr; } .found-elev { grid-template-columns: 1fr 1fr; } .found-radius { grid-template-columns: 1fr; } }
+@media (max-width: 1040px) { .cgrid { grid-template-columns: repeat(2, 1fr); } .parity { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .numbers { grid-template-columns: 1fr; } .cgrid { grid-template-columns: 1fr; } .cgrid .tile.wide { grid-column: auto; } .tpl-grid { grid-template-columns: 1fr; } .found-elev { grid-template-columns: 1fr 1fr; } .found-radius { grid-template-columns: 1fr; } }
 
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-block-start: 20px; }
 .duo-card { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 20px 22px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; transition: transform .3s var(--ease), border-color .2s; }
@@ -495,11 +495,9 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
     <!-- Numbers -->
     <section class="inner" aria-label="Marram in numbers" style="padding-block-start: 96px">
       <div class="numbers">
-        <div><b>55</b><span>React components</span><small>with variants, states and docs</small></div>
-        <div><b>~60</b><span>Figma components</span><small>every variant bound to tokens</small></div>
-        <div><b>129</b><span>Semantic colours</span><small>each with a light and dark value</small></div>
-        <div><b>16</b><span>Text styles</span><small>headings and body, three weights</small></div>
-        <div><b>17</b><span>Accent colours</span><small>each a 12-step ramp</small></div>
+        <div><b>55</b><span>Components</span><small>in React and in Figma, with variants and states</small></div>
+        <div><b>506</b><span>Variables</span><small>colour, type, spacing and more, light and dark as modes</small></div>
+        <div><b>35</b><span>Icons</span><small>one 24px set, named by what they are for</small></div>
       </div>
     </section>
 
@@ -913,7 +911,7 @@ function link(text, x, y, size = 19) { txt(text, x, y, size, 500, C.accent); }
 function drawTopBar() {
   g.fillStyle = C.topbar; g.fillRect(0, 0, W, TOPBAR);
   [['#ff5f57', '#e0443e'], ['#febc2e', '#dea123'], ['#28c840', '#1aab29']].forEach(([f, e], i) => { g.beginPath(); g.arc(30 + i * 28, TOPBAR / 2, 9, 0, 7); g.fillStyle = f; g.fill(); g.strokeStyle = e; g.lineWidth = 1.5; g.stroke(); });
-  appIcon(116, TOPBAR / 2 - 25, 50); txt('Smedja', 172, TOPBAR / 2 + 1, 24, 600, '#fff');
+  txt('Smedja', 116, TOPBAR / 2 + 1, 24, 600, '#fff');
   let x = 300;
   for (const m of ['Dashboards', 'Projects', 'Issues', 'Boards']) { txt(m, x, TOPBAR / 2 + 1, 20, 500, '#fff'); g.font = font(20, 500); x += g.measureText(m).width + 10;
     g.strokeStyle = '#fff'; g.lineWidth = 2; g.beginPath(); g.moveTo(x, TOPBAR / 2 - 2); g.lineTo(x + 5, TOPBAR / 2 + 3); g.lineTo(x + 10, TOPBAR / 2 - 2); g.stroke(); x += 36; }
@@ -930,7 +928,7 @@ function drawRail() {
   // project avatar: a circle, solid teal-600
   g.beginPath(); g.arc(37, TOPBAR + 38, 21, 0, 7); g.fillStyle = '#0d9488'; g.fill(); txt('B', 37, TOPBAR + 39, 21, 700, '#fff', 'center');
   const PITCH = 60;
-  const ic = (y, on, draw) => { if (on) rr(12, y - 23, 50, 46, 8, C.accentSoft); const c = on ? C.accent : C.icon; g.strokeStyle = c; g.fillStyle = c; g.lineWidth = 2.4; g.lineCap = 'round'; g.lineJoin = 'round'; draw(37, y); g.lineCap = 'butt'; g.lineJoin = 'miter'; };
+  const ic = (y, on, draw) => { if (on) rr(12, y - 23, 50, 46, 8, C.chip); const c = on ? C.ink : C.icon; g.strokeStyle = c; g.fillStyle = c; g.lineWidth = 2.4; g.lineCap = 'round'; g.lineJoin = 'round'; draw(37, y); g.lineCap = 'butt'; g.lineJoin = 'miter'; };
   let y = TOPBAR + 104;
   // timeline: staggered gantt bars
   ic(y, false, (x, y) => { rr(x - 12, y - 9, 14, 5, 2.5, g.fillStyle); rr(x - 6, y - 2, 16, 5, 2.5, g.fillStyle); rr(x, y + 5, 12, 5, 2.5, g.fillStyle); });
@@ -982,7 +980,7 @@ function drawEpics(x, y, w) {
   const ix = x + SP.pad, iw = w - SP.pad * 2, tx = ix + SP.pad;
   txt('EPICS', ix, y + 32, 16, 700, C.muted); line(x + w - 30, y + 26, x + w - 18, y + 38, C.muted); line(x + w - 18, y + 26, x + w - 30, y + 38, C.muted);
   let yy = y + 56;
-  rr(ix, yy, iw, 44, 6, C.accentSoft); txt('All issues', tx, yy + 22, 19, 500, C.ink); yy += 44 + SP.list;
+  rr(ix, yy, iw, 44, 6, C.chip); txt('All issues', tx, yy + 22, 19, 500, C.ink); yy += 44 + SP.list;
   EPICS.forEach(([name, col, pct], i) => {
     const open = i === 0, h = open ? 292 : 72;
     rr(ix, yy, iw, h, 6, C.surface, C.line);
