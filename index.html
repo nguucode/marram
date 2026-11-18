@@ -10,6 +10,16 @@
     <script>if (/[?&](path|id)=/.test(location.search)) location.replace('storybook/' + location.search + location.hash)</script>
 <!-- same URL as laptopModel in the module script; change both together -->
 <link rel="preload" href="macbook.glb" as="fetch" crossorigin>
+<!-- the Dock icons (ICON_NAMES) gate the first laptop frame; fetch them with the model, not after the scripts run -->
+<link rel="preload" href="dock/finder.png" as="image">
+<link rel="preload" href="dock/safari.png" as="image">
+<link rel="preload" href="dock/messages.png" as="image">
+<link rel="preload" href="dock/mail.png" as="image">
+<link rel="preload" href="dock/calendar.png" as="image">
+<link rel="preload" href="dock/notes.png" as="image">
+<link rel="preload" href="dock/figma.png" as="image">
+<link rel="preload" href="dock/settings.png" as="image">
+<link rel="preload" href="dock/trash.png" as="image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -1446,6 +1456,10 @@ async function start() {
     setScreenScale(want); drawBoard(); tex.dispose(); tex.image = ui; tex.needsUpdate = true;
   }
   new ResizeObserver(() => { resize(); fitTexture(); drawnVersion = -1; }).observe(host); resize(); fitTexture();
+  // Compile shaders off the main thread (KHR_parallel_shader_compile) and draw the first frame before
+  // revealing the canvas: no long task while the page loads, no blank canvas after the placeholder goes.
+  await renderer.compileAsync(scene, camera).catch(() => {});
+  renderer.render(scene, camera); drawnVersion = tex.version;
   host.classList.add('ready');
 
 
