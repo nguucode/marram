@@ -266,10 +266,17 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
 .numbers span { display: block; margin-block: 20px 8px; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
 .numbers small { display: block; color: var(--muted); font-size: 15px; line-height: 1.55; text-wrap: balance; }
 .cgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-block-start: 56px; }
-.cgrid .tile { margin: 0; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+/* each tile is two rows of the grid (frame, caption) via subgrid, so frames line up across a row even when a caption wraps */
+.cgrid .tile { margin: 0; display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 12px; min-width: 0; }
 .cgrid .tile.wide { grid-column: span 2; }
-.cgrid .prev { aspect-ratio: 4 / 3; max-width: 100%; border-radius: 16px; background: var(--white); border: 1px solid var(--line); display: grid; place-items: center; padding: 20px; box-shadow: 0 16px 32px -24px rgb(20 20 20 / 0.3); overflow: hidden; }
-.cgrid .tile.wide .prev { aspect-ratio: auto; height: 100%; min-height: 220px; }
+/* Tiles size to their content, never a fixed ratio: the grid stretches each row to its tallest tile and .prev fills the rest,
+   so a row's frames always line up. The tile is a size container so wide demos can scale to it. */
+.cgrid .prev { min-height: 240px; container-type: inline-size; max-width: 100%; border-radius: 16px; background: var(--white); border: 1px solid var(--line); display: grid; place-items: center; padding: 20px; box-shadow: 0 16px 32px -24px rgb(20 20 20 / 0.3); overflow: hidden; }
+/* the demo wrapper may shrink below its content, so a wide table scrolls inside its own container instead of pushing past the frame */
+.cgrid .prev > * { min-width: 0; max-width: 100%; }
+/* the calendar is ~310px wide at its own size: scale it down when the tile is narrower */
+@container (max-width: 360px) { .cgrid .prev[data-demo=calendar] > * { zoom: 0.85; } }
+@container (max-width: 300px) { .cgrid .prev[data-demo=calendar] > * { zoom: 0.72; } }
 .cgrid figcaption b { display: block; font-size: 16px; font-weight: 600; }
 .cgrid figcaption span { font-size: 14px; color: var(--muted); }
 .tpl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -358,8 +365,9 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
 .found-radius .card-s { width: 100%; height: 70px; border: 1px solid var(--line); background: var(--white); }
 .found-elev { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; width: min(620px, 100%); }
 .found-elev div { height: 90px; border-radius: 12px; background: var(--white); display: grid; place-items: end start; padding: 10px; font: 12px var(--mono); color: var(--muted); }
-@media (max-width: 1040px) { .cgrid { grid-template-columns: repeat(2, 1fr); } .parity { grid-template-columns: 1fr; } }
-@media (max-width: 700px) { .numbers { grid-template-columns: 1fr; padding-inline: 24px; } .feats { padding-inline: 0; } .cgrid { grid-template-columns: 1fr; } .cgrid .prev { aspect-ratio: auto; min-height: 240px; padding: 12px; } .cgrid .prev[data-demo=calendar] > * { zoom: 0.85; } .cgrid .tile.wide { grid-column: auto; } .tpl-grid { grid-template-columns: 1fr; } .found-elev { grid-template-columns: 1fr 1fr; } .found-radius { grid-template-columns: 1fr; } }
+@media (max-width: 1180px) { .cgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1040px) { .parity { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .numbers { grid-template-columns: 1fr; padding-inline: 24px; } .feats { padding-inline: 0; } .cgrid { grid-template-columns: 1fr; } .cgrid .prev { padding: 12px; } .cgrid .tile.wide { grid-column: auto; } .tpl-grid { grid-template-columns: 1fr; } .found-elev { grid-template-columns: 1fr 1fr; } .found-radius { grid-template-columns: 1fr; } }
 
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-block-start: 20px; }
 .duo-card { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 20px 22px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; transition: transform .3s var(--ease), border-color .2s; }

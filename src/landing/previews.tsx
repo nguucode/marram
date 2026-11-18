@@ -141,7 +141,7 @@ function Previews({ slots }: { slots: HTMLElement[] }) {
   const accent = useAccent()
   return slots.map((el) =>
     createPortal(
-      <Theme appearance="light" accentColor={accent} radius="rounded" tokens={font} style={{ width: '100%', display: 'grid', placeItems: 'center' }}>
+      <Theme appearance="light" accentColor={accent} radius="rounded" tokens={font} style={{ width: '100%', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', placeItems: 'center' }}>
         {DEMOS[el.dataset.demo!]}
       </Theme>,
       el,
