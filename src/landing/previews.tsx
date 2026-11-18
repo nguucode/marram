@@ -37,6 +37,9 @@ const smiths = [
   { id: '5', smith: 'Ravi Sundaram', blade: 'Falchion', status: ['Rejected', 'danger'] },
 ] as const
 
+// Unsplash portraits shipped in public/avatars (sources in its README)
+const photo = (name: string) => `${import.meta.env.BASE_URL}avatars/${name}.webp`
+
 const sales = [12, 18, 16, 27, 25, 34, 32].map((value, i) => ({ day: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i], value }))
 
 const DEMOS: Record<string, ReactNode> = {
@@ -82,14 +85,14 @@ const DEMOS: Record<string, ReactNode> = {
   avatars: (
     <AvatarGroup
       size="lg"
-      max={4}
+      max={5}
       avatars={[
-        { initials: 'HØ', color: 'blue' },
-        { initials: 'IV', color: 'green' },
-        { initials: 'TK', color: 'orange' },
-        { initials: 'MA', color: 'purple' },
-        { initials: 'RS', color: 'teal' },
-        { initials: 'PL', color: 'rose' },
+        { imageSrc: photo('ingrid'), imageAlt: 'Ingrid Halvorsen' },
+        { imageSrc: photo('tomasz'), imageAlt: 'Tomasz Kowalczyk' },
+        { imageSrc: photo('amara'), imageAlt: 'Amara Okafor' },
+        { imageSrc: photo('halvard'), imageAlt: 'Halvard Østby' },
+        { imageSrc: photo('ilse'), imageAlt: 'Ilse Vandermeer' },
+        { initials: 'RS', color: 'teal', imageAlt: 'Ravi Sundaram' },
       ]}
     />
   ),
