@@ -50,7 +50,7 @@ const DEMOS: Record<string, ReactNode> = {
   input: <TextInput label="Email" defaultValue="halvard@bryggen.no" helperText="We only use this for receipts." isFullWidth />,
   select: (
     <div style={stack}>
-      <Select label="Workshop" options={['Oslo', 'Bergen', 'Trondheim']} defaultValue="Bergen" isFullWidth />
+      <Select label="Workshop" options={['Oslo', 'Bergen', 'Trondheim']} defaultValue="Bergen" helperText="Where the blade is forged." isFullWidth />
     </div>
   ),
   controls: (
