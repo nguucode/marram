@@ -1,11 +1,5 @@
 # Marram
 
-> **Early stage, not production-ready.** Only a few components exist
-> (see Components → Overview in Storybook) and no Figma file has been applied yet — the
-> palettes are placeholders, picked for contrast rather than designed.
-> Expect breaking changes on any `0.x` version bump. Fine to poke around
-> or reference the setup; not ready to build a real product on top of yet.
-
 Front-end UI kit for React, documented in Storybook. No CSS framework and no
 primitive library — components are plain elements styled with CSS Modules
 against a token layer of CSS custom properties.

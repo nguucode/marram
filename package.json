@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "type": "module",
-  "description": "Marram components (early stage, not production-ready — see README), consumed as copy-source via the shadcn registry.",
+  "description": "Marram components, consumed as copy-source via the shadcn registry.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

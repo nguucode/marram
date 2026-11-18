@@ -14,7 +14,7 @@ Enterprise product teams in SaaS, ERP, CRM, fintech and accounting: product desi
 
 Marram is a React UI kit documented in Storybook. It gives product teams components, patterns and templates for application UI that they can re-theme to their own product without forking. Success is a team shipping a data-heavy app screen from kit pieces, themed to their brand, with no accessibility errors and a Figma file that matches the code.
 
-Current state: early stage (0.x), not production-ready, palettes are placeholders. 1.0 requires every component to meet the definition of done (including a Figma component set), a semver 1.x commitment, the two latest Chrome/Edge/Firefox/Safari (incl. iOS), and full keyboard use.
+Current state: official release, out of early stage. 1.0 requires every component to meet the definition of done (including a Figma component set), a semver 1.x commitment, the two latest Chrome/Edge/Firefox/Safari (incl. iOS), and full keyboard use.
 
 ## Positioning
 
