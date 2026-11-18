@@ -1,5 +1,21 @@
 # marram
 
+## 1.0.0
+
+### Major Changes
+
+- Marram 1.0. The kit is out of early stage and follows semver from here: a breaking change to a beta component only ships in a major version, and the changelog says what to change. Components marked `experimental`, like the charts, are outside that promise and can still change in any release. No API changes in this release beyond the ones listed below.
+
+### Minor Changes
+
+- 1c544fa: The kit is now **Marram**, a design system by ontheshore. New name, new logo (`public/logo.svg`, `public/favicon.svg`).
+  
+  What you have to change:
+  
+  - **npm:** the kit is no longer published to npm. Copy-source through the shadcn registry is the only way to install it; move any npm install over to `npx shadcn add`.
+  - **Registry (`npx shadcn add`):** the registry is now at `https://marram.ontheshore.biz/r/<name>.json` (namespace `@marram`). Files land in `components/marram/` and `styles/marram-tokens.css`. Re-add the items you use from the new URL, then delete the old component folder and tokens file and update imports.
+  - **Stylelint:** the rule names are now `marram/semantic-tokens` and `marram/no-token-shadow`; update any `stylelint-disable` comments that name them.
+
 ## 0.9.0
 
 ### Minor Changes
