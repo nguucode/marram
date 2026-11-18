@@ -319,13 +319,25 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
 .spec-guide figcaption { font-size: 12px; color: var(--muted); } .spec-guide figcaption b { display: block; color: var(--ink); }
 .spec-guide .do b { color: #15803d; } .spec-guide .dont b { color: #b91c1c; }
 .spec-stage { display: grid; place-items: center; padding: 40px 20px; background: radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 0) 0 0 / 14px 14px; }
-.spec-btn { position: relative; font: 600 14px var(--sans); height: 32px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 8px; background: #2563eb; color: #fff; outline: 1px dashed #e11d48; outline-offset: 0; }
+.spec-btn { position: relative; font: 500 14px/20px var(--sans); height: 32px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 6px; background: #2563eb; color: #fff; outline: 1px dashed #e11d48; outline-offset: 0; }
 .spec-btn.plain { outline: 0; } .spec-btn.ghost { outline: 0; background: var(--white); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-2); }
 .spec-guide .spec-btn { font-size: 13px; height: 30px; }
-.spec-btn em { position: absolute; font: 600 11px var(--mono); font-style: normal; color: #be123c; background: var(--white); padding: 0 3px; border-radius: 3px; } .spec-btn .r-h { left: 6px; top: -22px; transform: translateX(-50%); } .spec-btn .r-v { right: -36px; top: 50%; transform: translateY(-50%); }
+.spec-btn em { position: absolute; white-space: nowrap; font: 600 11px var(--mono); font-style: normal; color: #be123c; background: var(--white); padding: 0 3px; border-radius: 3px; } .spec-measure { padding-block: 64px 56px; }
+.spec-btn .r-v { right: -36px; top: 50%; transform: translateY(-50%); }
+/* width: a dimension line across the top with end ticks */
+.spec-btn .r-w { left: 0; right: 0; top: -26px; text-align: center; background: none; padding: 0; }
+.spec-btn .r-w::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 6px; transform: translateY(-50%); border: 1px solid #e11d48; border-block: 0; background: linear-gradient(#e11d48, #e11d48) 0 50% / 100% 1px no-repeat; z-index: -1; }
+.spec-btn .r-w { isolation: isolate; } .spec-btn .r-w i { font-style: normal; background: var(--white); padding: 0 4px; }
+/* padding labels under each shaded side */
+.spec-btn .r-pl, .spec-btn .r-pr { top: calc(100% + 6px); transform: translateX(-50%); } .spec-btn .r-pl { left: 6px; } .spec-btn .r-pr { left: calc(100% - 6px); }
+/* radius: a leader from the top-left corner */
+.spec-btn .r-r { right: calc(100% + 14px); top: -16px; }
+.spec-btn .r-r::after { content: ""; position: absolute; left: 100%; top: 50%; width: 14px; height: 14px; border-top: 1px solid #e11d48; transform-origin: 0 0; transform: rotate(35deg); }
+/* label type, under the button */
+.spec-btn .r-t { left: 50%; top: calc(100% + 26px); transform: translateX(-50%); white-space: nowrap; }
 /* padding-inline shaded on both sides, as Figma's spacing overlay */
 .spec-btn:not(.plain):not(.ghost)::before, .spec-btn:not(.plain):not(.ghost)::after { content: ""; position: absolute; top: 0; bottom: 0; width: 12px; background: rgb(244 63 94 / 0.45); }
-.spec-btn:not(.plain):not(.ghost)::before { left: 0; border-radius: 8px 0 0 8px; } .spec-btn:not(.plain):not(.ghost)::after { right: 0; border-radius: 0 8px 8px 0; }
+.spec-btn:not(.plain):not(.ghost)::before { left: 0; border-radius: 6px 0 0 6px; } .spec-btn:not(.plain):not(.ghost)::after { right: 0; border-radius: 0 6px 6px 0; }
 /* height: a bracket beside the button, its label next to it */
 .spec-btn .r-v::before { content: ""; position: absolute; right: calc(100% + 3px); top: 50%; height: 32px; width: 4px; transform: translateY(-50%); border: 1px solid #e11d48; border-left: 0; }
 .spec-rows > div { display: flex; justify-content: space-between; padding: 9px 16px; border-top: 1px solid var(--line); } .spec-rows span { color: var(--muted); } .spec-rows b { font: 500 12px var(--mono); }
@@ -595,9 +607,9 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
             </div>
             <div class="spec-panels">
               <div class="spec-panel on" role="tabpanel" id="spec-p-specs" aria-labelledby="spec-t-specs">
-                <div class="spec-stage"><span class="spec-btn">Save changes<em class="r-h">12</em><em class="r-v">32</em></span></div>
+                <div class="spec-stage spec-measure"><span class="spec-btn">Save changes<em class="r-w"><i>Hug</i></em><em class="r-pl">12</em><em class="r-pr">12</em><em class="r-v">32</em><em class="r-r">r 6</em><em class="r-t">14/20 Medium</em></span></div>
                 <div class="spec-rows">
-                  <div><span>Height</span><b>control-md · 32</b></div><div><span>Padding inline</span><b>pad-spacious · 12</b></div><div><span>Radius</span><b>control-md-radius</b></div><div><span>Label</span><b>Body/md/Medium</b></div><div><span>Focus ring</span><b>2px · offset 2</b></div>
+                  <div><span>Width</span><b>hug content</b></div><div><span>Height</span><b>control-md · 32</b></div><div><span>Padding inline</span><b>pad-spacious · 12</b></div><div><span>Radius</span><b>control-md-radius · 6</b></div><div><span>Label</span><b>Body/md/Medium · 14/20</b></div><div><span>Focus ring</span><b>2px · offset 2</b></div>
                 </div>
               </div>
               <div class="spec-panel" role="tabpanel" id="spec-p-guide" aria-labelledby="spec-t-guide">
