@@ -171,6 +171,9 @@ h2 { font: 400 clamp(34px, 4.2vw, 52px)/1.08 var(--sans); letter-spacing: -0.035
 .switch button[aria-pressed="true"] { background: var(--soft); color: var(--c); }
 .caption { text-align: center; font-size: 15px; color: var(--muted); max-width: 52ch; margin: 18px auto 0; }
 .caption strong { color: var(--ink); font-weight: 600; }
+/* Foundations: the caption sits inside the tinted frame, under the demo */
+#found-show { grid-template-rows: 1fr auto; }
+#found-show .caption { margin-top: 24px; }
 
 /* feature list under each section */
 .feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 40px; margin-block-start: 64px; padding-block-start: 48px; border-block-start: 1px solid var(--line); }
@@ -517,7 +520,6 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
           <button type="button" aria-pressed="false" data-k="radius">Radius</button>
           <button type="button" aria-pressed="false" data-k="elev">Elevation</button>
         </div></div>
-        <p class="caption" id="found-cap"></p>
       </div>
       <div class="feats">
         <p class="feat"><i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="8" r="5"/></svg></i><span><strong>17 accents, 4 grays.</strong> Red to rose, slate to neutral, every one a 12-step ramp.</span></p>
@@ -680,8 +682,8 @@ const FOUND = {
   elev: [`<div class="found-elev">${[['xs', '0 1px 2px rgb(20 20 20/.08)'], ['sm', '0 2px 6px -1px rgb(20 20 20/.12)'], ['raised', '0 8px 20px -6px rgb(20 20 20/.2)'], ['overlay', '0 24px 48px -12px rgb(20 20 20/.32)']].map(([n, sh]) => `<div style="box-shadow:${sh}">${n}</div>`).join('')}</div>`,
     '<strong>Elevation for layers, not decoration.</strong> Raised for cards that lift, overlay for menus and dialogs, with darker shadows in dark mode.'],
 };
-const fShow = document.getElementById('found-show'), fCap = document.getElementById('found-cap');
-const fRender = k => { fShow.innerHTML = '<div style="width:100%;display:grid;place-items:center">' + FOUND[k][0] + '</div>'; fCap.innerHTML = FOUND[k][1]; };
+const fShow = document.getElementById('found-show');
+const fRender = k => { fShow.innerHTML = '<div style="width:100%;display:grid;place-items:center">' + FOUND[k][0] + '</div><p class="caption">' + FOUND[k][1] + '</p>'; };
 fRender('colour'); pressGroup(document.getElementById('found-switch'), b => fRender(b.dataset.k));
 
 // Calendar tile
