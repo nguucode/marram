@@ -33,6 +33,8 @@ const smiths = [
   { id: '1', smith: 'Halvard Østby', blade: 'Marram', status: ['Quenched', 'success'] },
   { id: '2', smith: 'Ilse Vandermeer', blade: 'Messer', status: ['Tempering', 'warning'] },
   { id: '3', smith: 'Tomasz Kowalczyk', blade: 'Longsword', status: ['Grinding', 'neutral'] },
+  { id: '4', smith: 'Mirela Ambroz', blade: 'Seax', status: ['Quenched', 'success'] },
+  { id: '5', smith: 'Ravi Sundaram', blade: 'Falchion', status: ['Rejected', 'danger'] },
 ] as const
 
 const sales = [12, 18, 16, 27, 25, 34, 32].map((value, i) => ({ day: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i], value }))
@@ -96,7 +98,9 @@ const DEMOS: Record<string, ReactNode> = {
       Order 0417 moved to tempering.
     </Alert>
   ),
+  // Full tile width: the Theme wrapper centres its child, which would shrink the table to its content.
   table: (
+    <div style={{ width: '100%' }}>
     <Table
       caption="Blades in the workshop"
       rows={[...smiths]}
@@ -106,8 +110,8 @@ const DEMOS: Record<string, ReactNode> = {
         { key: 'blade', header: 'Blade', cell: (r) => r.blade },
         { key: 'status', header: 'Status', cell: (r) => <Tag text={r.status[0]} variant={r.status[1]} size="sm" /> },
       ]}
-      size="sm"
     />
+    </div>
   ),
   calendar: <Calendar defaultValue={new Date(2026, 10, 14)} defaultMonth={new Date(2026, 10, 1)} locale="en-GB" />,
   chart: (
