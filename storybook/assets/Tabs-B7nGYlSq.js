@@ -1,0 +1,67 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{i as n,r}from"./react-BXJ34t_g.js";import{c as i,l as a,n as o,r as s,s as c}from"./blocks-GpDLDP7O.js";import{_ as l,f as u,h as d,i as f,m as p,n as m,o as h,t as g}from"./blocks-COhIzeP7.js";import{a as _,c as v,d as y,f as b,i as x,l as S,n as C,o as w,p as T,r as E,s as D,t as O,u as k}from"./Tabs.stories-DzmrOmJA.js";function A(e){let t={a:`a`,code:`code`,h1:`h1`,h2:`h2`,li:`li`,p:`p`,pre:`pre`,strong:`strong`,table:`table`,tbody:`tbody`,td:`td`,th:`th`,thead:`thead`,tr:`tr`,ul:`ul`,...n(),...e.components};return(0,M.jsxs)(M.Fragment,{children:[(0,M.jsx)(c,{of:S}),`
+`,(0,M.jsx)(t.h1,{id:`tabs`,children:`Tabs`}),`
+`,(0,M.jsxs)(d,{children:[(0,M.jsxs)(p,{value:`overview`,children:[(0,M.jsx)(t.p,{children:`Switches between views of the same thing without leaving the page:
+Overview, Activity, Settings of one project.`}),(0,M.jsx)(m,{of:S}),(0,M.jsx)(s,{of:C}),(0,M.jsx)(t.h2,{id:`variants`,children:`Variants`}),(0,M.jsxs)(t.p,{children:[(0,M.jsx)(t.code,{children:`appearance`}),` is the look. Either takes either size and orientation.`]}),(0,M.jsxs)(t.table,{children:[(0,M.jsx)(t.thead,{children:(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.th,{children:`Appearance`}),(0,M.jsx)(t.th,{children:`Use for`})]})}),(0,M.jsxs)(t.tbody,{children:[(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`underline`})}),(0,M.jsx)(t.td,{children:`The sections of a page or a panel. Tabs sit on a 1px rule; a bar slides under the selected one. The default.`})]}),(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`pills`})}),(0,M.jsx)(t.td,{children:`A compact view switch in a toolbar, such as List / Board. A segmented track with the selected tab lifted.`})]})]})]}),(0,M.jsx)(s,{of:w}),(0,M.jsxs)(t.table,{children:[(0,M.jsx)(t.thead,{children:(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.th,{children:`Form`}),(0,M.jsx)(t.th,{children:`Use for`})]})}),(0,M.jsxs)(t.tbody,{children:[(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`isFullWidth`})}),(0,M.jsx)(t.td,{children:`Two to four tabs that should fill a narrow container, such as a side panel or a phone screen.`})]}),(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`vertical`})}),(0,M.jsx)(t.td,{children:`Many sections, or labels too long for a row: settings pages, a panel beside its content.`})]}),(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:`Icons`}),(0,M.jsx)(t.td,{children:`Recognisable icons beside the label. Never an icon alone: the label is the tab's name.`})]})]})]}),(0,M.jsx)(s,{of:_}),(0,M.jsx)(s,{of:k}),(0,M.jsx)(s,{of:y}),(0,M.jsx)(t.h2,{id:`resources`,children:`Resources`}),(0,M.jsx)(t.p,{children:`From npm, or copied into your project through the registry:`}),(0,M.jsx)(t.pre,{children:(0,M.jsx)(t.code,{className:`language-js`,children:`import { Tabs } from 'marram/tabs'
+`})}),(0,M.jsx)(t.pre,{children:(0,M.jsx)(t.code,{className:`language-sh`,children:`npx shadcn@latest add https://marram.ontheshore.biz/r/tabs.json
+`})}),(0,M.jsxs)(t.ul,{children:[`
+`,(0,M.jsxs)(t.li,{children:[`Source: `,(0,M.jsx)(t.a,{href:`https://github.com/nguucode/marram/blob/main/src/components/navigation/Tabs.tsx`,rel:`nofollow`,children:`src/components/navigation/Tabs.tsx`})]}),`
+`,(0,M.jsxs)(t.li,{children:[`Spec: `,(0,M.jsx)(t.a,{href:`https://www.uiguideline.com/components/tabs`,rel:`nofollow`,children:`uiguideline.com/components/tabs`})]}),`
+`,(0,M.jsxs)(t.li,{children:[`Behaviour: `,(0,M.jsx)(t.a,{href:`https://base-ui.com/react/components/tabs`,rel:`nofollow`,children:`Base UI Tabs`})]}),`
+`,(0,M.jsx)(t.li,{children:`Figma: not in the library yet`}),`
+`]})]}),(0,M.jsxs)(p,{value:`specs`,children:[(0,M.jsx)(t.h2,{id:`anatomy`,children:`Anatomy`}),(0,M.jsx)(l,{parts:b,children:(0,M.jsx)(i,{of:O})}),(0,M.jsx)(t.p,{children:`The indicator is one element for the whole list. It moves to the selected
+tab rather than each tab drawing its own, so a change of tab slides it
+across.`}),(0,M.jsx)(t.h2,{id:`measurements`,children:`Measurements`}),(0,M.jsxs)(t.p,{children:[`Each size is a control tier (Foundations / Sizing). `,(0,M.jsx)(t.code,{children:`md`}),` follows Atlassian
+Design's tabs: 32px tall, 8px inline padding, no gap between tabs, a
+14/20 label and a 2px indicator as wide as the label (8px in from the
+tab's edges). The `,(0,M.jsx)(t.code,{children:`underline`}),` list is pulled out by those 8px, so the
+first label lines up with the content below it; inside a container that
+clips (a modal body, a card with hidden overflow) leave 8px of room on
+that side, or the first tab's focus ring is cut, as with Atlassian's.
+The 16px from the list
+to the panel is the kit's own: Atlassian leaves that to the panel's
+content. Atlassian Design has no small tab; `,(0,M.jsx)(t.code,{children:`sm`}),` is the kit's own, the
+same tab in a 24px box for dense panels.`]}),(0,M.jsx)(h,{caption:`sm`,rows:[{part:`Tab`,property:`Height`,token:`--control-sm`},{part:`Tab`,property:`Inline padding`,token:`--space-2`},{part:`Tab`,property:`Gap between icon and label`,token:`--control-sm-gap`},{part:`Tab`,property:`Corner radius (the focus ring follows it)`,token:`--control-sm-radius`},{part:`Tab, pills`,property:`Track corner radius`,token:`--control-sm-radius-field`},{part:`Icon`,property:`Size`,token:`--icon-sm`},{part:`Label`,property:`Font size`,token:`--text-body`},{part:`Label`,property:`Line height`,token:`--leading-body`}]}),(0,M.jsx)(h,{caption:`md`,rows:[{part:`Tab`,property:`Height`,token:`--control-md`},{part:`Tab`,property:`Inline padding`,token:`--space-2`},{part:`Tab`,property:`Gap between icon and label`,token:`--control-md-gap`},{part:`Tab`,property:`Corner radius (the focus ring follows it)`,token:`--control-md-radius`},{part:`Tab, pills`,property:`Track corner radius`,token:`--control-md-radius-field`},{part:`Icon`,property:`Size`,token:`--icon-md`},{part:`Label`,property:`Font size`,token:`--text-body`},{part:`Label`,property:`Line height`,token:`--leading-body`}]}),(0,M.jsx)(h,{caption:`Every size`,rows:[{part:`Tab list, pills`,property:`Gap between tabs`,token:`--space-stack`},{part:`Tab list`,property:`Gap to the panel`,token:`--space-group`},{part:`Indicator, underline`,property:`Thickness`,token:`--border-width-selected`},{part:`Tab`,property:`Focus ring offset (inside the tab)`,token:`--focus-offset-inset`},{part:`Panel`,property:`Focus ring offset`,token:`--focus-offset`},{part:`Focus ring`,property:`Width`,token:`--focus-width`},{part:`Tab`,property:`Height on touch screens`,token:`--target-coarse`}]}),(0,M.jsxs)(t.p,{children:[`In `,(0,M.jsx)(t.code,{children:`pills`}),`, the track has a 2px inset
+and the chip's corner is the track's minus 2px, so the two stay concentric
+at every size.`]}),(0,M.jsx)(t.h2,{id:`color`,children:`Color`}),(0,M.jsx)(t.p,{children:`Each appearance has its own label colours and indicator. Switch the theme
+and the accent in the toolbar: the values follow.`}),(0,M.jsx)(h,{caption:`underline`,rows:[{part:`Tab`,property:`Label colour`,token:`--color-text-subtlest`},{part:`Tab, hover`,property:`Label colour`,token:`--color-text`},{part:`Selected tab`,property:`Label colour`,token:`--color-text-brand`},{part:`Indicator`,property:`Colour`,token:`--color-background-brand-bold`},{part:`Tab list`,property:`Rule`,token:`--color-border`}]}),(0,M.jsx)(h,{caption:`pills`,rows:[{part:`Tab list`,property:`Track`,token:`--color-background-neutral`},{part:`Tab`,property:`Label colour`,token:`--color-text-subtle`},{part:`Tab, hover, and selected tab`,property:`Label colour`,token:`--color-text`},{part:`Indicator`,property:`Background`,token:`--color-surface`},{part:`Indicator`,property:`Border`,token:`--color-border`},{part:`Indicator`,property:`Shadow`,token:`--shadow-raised`}]}),(0,M.jsx)(h,{caption:`Every appearance`,rows:[{part:`Focus ring`,property:`Colour`,token:`--color-border-focused`}]}),(0,M.jsxs)(t.p,{children:[`Pill labels use `,(0,M.jsx)(t.code,{children:`--color-text-subtle`}),`, not `,(0,M.jsx)(t.code,{children:`--color-text-subtlest`}),`: that is
+4.3:1 on the `,(0,M.jsx)(t.code,{children:`--color-background-neutral`}),` track, under 4.5:1.`]}),(0,M.jsx)(t.h2,{id:`states`,children:`States`}),(0,M.jsx)(f,{states:[{label:`Enabled`},{label:`Hover`,pseudo:`hover`},{label:`Focus`,pseudo:`focus-visible`}],children:(0,M.jsx)(i,{of:v})}),(0,M.jsx)(f,{states:[{label:`Enabled, pills`},{label:`Hover, pills`,pseudo:`hover`},{label:`Focus, pills`,pseudo:`focus-visible`}],children:(0,M.jsx)(i,{of:D})}),(0,M.jsxs)(t.ul,{children:[`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`Selected`}),`: the label takes the selected colour and the indicator
+slides under it (`,(0,M.jsx)(t.code,{children:`underline`}),`) or behind it (`,(0,M.jsx)(t.code,{children:`pills`}),`).`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`Hover`}),` brings an unselected label up to `,(0,M.jsx)(t.code,{children:`--color-text`}),`. It adds no
+fill.`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`Focus`}),` is a 2px `,(0,M.jsx)(t.code,{children:`--color-border-focused`}),` outline drawn just inside the tab, so it is
+not clipped by the list.`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`Disabled`}),` (Archive, above) is the enabled look at 50% opacity. It
+still takes focus.`]}),`
+`]}),(0,M.jsx)(t.h2,{id:`api`,children:`API`}),(0,M.jsx)(`div`,{style:{overflowX:`auto`},children:(0,M.jsx)(o,{of:S})})]}),(0,M.jsxs)(p,{value:`guidelines`,children:[(0,M.jsx)(t.h2,{id:`when-to-use`,children:`When to use`}),(0,M.jsx)(t.p,{children:`Use Tabs to split one thing into views the reader moves between freely,
+in any order: the overview, activity and settings of a project. Every
+panel is about the same object, and only one is needed at a time.`}),(0,M.jsx)(t.p,{children:`Label each tab with a word or two. Labels do not wrap or shrink, so long
+ones push the row past its container.`}),(0,M.jsx)(u,{do:(0,M.jsx)(i,{of:E}),doCaption:`Short labels, a word or two: the row fits, and each reads at a glance.`,dont:(0,M.jsx)(i,{of:x}),dontCaption:`Long labels run past the edge of the container. Shorten them, or go vertical.`}),(0,M.jsxs)(t.p,{children:[`Use `,(0,M.jsx)(t.code,{children:`underline`}),` for the sections of a page and `,(0,M.jsx)(t.code,{children:`pills`}),` for a view switch
+in a toolbar. Name the tab list with `,(0,M.jsx)(t.code,{children:`aria-label`}),` when no heading does.
+Selection is manual by default: arrow keys move focus, Enter or Space
+selects, so a slow panel does not load on every keypress. Turn on
+`,(0,M.jsx)(t.code,{children:`activateOnFocus`}),` only for light panels.`]}),(0,M.jsx)(t.h2,{id:`when-not-to-use`,children:`When not to use`}),(0,M.jsxs)(t.ul,{children:[`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`For a sequence.`}),` Steps that must be done in order belong in a
+Stepper.`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`To compare content side by side.`}),` Tabs show one panel at a time; put
+things that are read together on the same view.`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`To go to another page.`}),` Use links, a side navigation or Breadcrumbs: a tab
+changes the view, not the URL.`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`For one setting with two or three options.`}),` Use a radio group or a
+`,(0,M.jsx)(t.a,{href:`?path=/docs/components-buttons-togglebutton--docs`,children:`Toggle Button`}),` group:
+that changes a value, not the view.`]}),`
+`]}),(0,M.jsx)(t.h2,{id:`accessibility`,children:`Accessibility`}),(0,M.jsxs)(t.ul,{children:[`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.code,{children:`role="tablist"`}),` of `,(0,M.jsx)(t.code,{children:`role="tab"`}),` buttons with `,(0,M.jsx)(t.code,{children:`aria-selected`}),` and
+`,(0,M.jsx)(t.code,{children:`aria-controls`}),`; each panel is a `,(0,M.jsx)(t.code,{children:`role="tabpanel"`}),` labelled by its tab.`]}),`
+`,(0,M.jsx)(t.li,{children:`One tab stop: Tab moves into the list on the selected tab and the next
+Tab moves on to the panel.`}),`
+`,(0,M.jsxs)(t.li,{children:[`Arrow keys move between tabs (Left and Right, or Up and Down when
+vertical, with `,(0,M.jsx)(t.code,{children:`aria-orientation`}),` set); Home and End jump to the ends.`]}),`
+`,(0,M.jsxs)(t.li,{children:[`Arrows move focus without selecting; Enter or Space selects. With
+`,(0,M.jsx)(t.code,{children:`activateOnFocus`}),`, arrows select as they go.`]}),`
+`,(0,M.jsxs)(t.li,{children:[`A disabled tab still takes focus, marked `,(0,M.jsx)(t.code,{children:`aria-disabled`}),`, so it is
+found and announced, but it cannot be selected.`]}),`
+`,(0,M.jsxs)(t.li,{children:[`Tabs are 24 or 32px tall and grow to 44px on touch screens
+(`,(0,M.jsx)(t.code,{children:`pointer: coarse`}),`).`]}),`
+`,(0,M.jsxs)(t.li,{children:[`Focus ring: 2px `,(0,M.jsx)(t.code,{children:`--color-border-focused`}),`, drawn inside the tab.`]}),`
+`]})]})]})]})}function j(e={}){let{wrapper:t}={...n(),...e.components};return t?(0,M.jsx)(t,{...e,children:(0,M.jsx)(A,{...e})}):A(e)}var M;function N(){return(N=e((()=>{M=t(),r(),a(),g(),T()})))()}N();export{j as default};

@@ -1,0 +1,55 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{i as n,r}from"./react-BXJ34t_g.js";import{c as i,l as a,n as o,r as s,s as c}from"./blocks-GpDLDP7O.js";import{_ as l,f as u,h as d,i as f,m as p,n as m,o as h,t as g}from"./blocks-COhIzeP7.js";import{a as _,c as v,d as y,f as b,i as x,l as S,m as C,n as w,o as T,p as E,r as D,s as O,t as k,u as A}from"./ProgressBar.stories-Dn_vNWVF.js";function j(e){let t={a:`a`,code:`code`,h1:`h1`,h2:`h2`,h3:`h3`,li:`li`,p:`p`,pre:`pre`,strong:`strong`,table:`table`,tbody:`tbody`,td:`td`,th:`th`,thead:`thead`,tr:`tr`,ul:`ul`,...n(),...e.components};return(0,N.jsxs)(N.Fragment,{children:[(0,N.jsx)(c,{of:T}),`
+`,(0,N.jsx)(t.h1,{id:`progress-bar`,children:`Progress Bar`}),`
+`,(0,N.jsxs)(d,{children:[(0,N.jsxs)(p,{value:`overview`,children:[(0,N.jsx)(t.p,{children:`Shows how far a task with a known size has got: an upload, an install,
+the steps of a setup.`}),(0,N.jsx)(m,{of:T}),(0,N.jsx)(s,{of:v}),(0,N.jsx)(t.h2,{id:`variants`,children:`Variants`}),(0,N.jsxs)(t.p,{children:[(0,N.jsx)(t.code,{children:`variant`}),` is the colour of the fill, by meaning. The track is the same in
+all four.`]}),(0,N.jsx)(s,{of:S}),(0,N.jsxs)(t.table,{children:[(0,N.jsx)(t.thead,{children:(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.th,{children:`Variant`}),(0,N.jsx)(t.th,{children:`Use for`})]})}),(0,N.jsxs)(t.tbody,{children:[(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.td,{children:(0,N.jsx)(t.code,{children:`primary`})}),(0,N.jsx)(t.td,{children:`The default: a task the user started and is waiting on.`})]}),(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.td,{children:(0,N.jsx)(t.code,{children:`accent`})}),(0,N.jsx)(t.td,{children:`A strong fill in neutral black or white, where the brand colour would clash or already means something else.`})]}),(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.td,{children:(0,N.jsx)(t.code,{children:`secondary`})}),(0,N.jsx)(t.td,{children:`Low emphasis: progress in the background, or one of many bars in a list.`})]}),(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.td,{children:(0,N.jsx)(t.code,{children:`destructive`})}),(0,N.jsx)(t.td,{children:`A task that is failing, or a quota about to run out.`})]})]})]}),(0,N.jsxs)(t.p,{children:[(0,N.jsx)(t.code,{children:`size`}),` is the track's thickness, and `,(0,N.jsx)(t.code,{children:`isRounded`}),` gives it pill ends.`]}),(0,N.jsx)(s,{of:O}),(0,N.jsx)(t.p,{children:`When a task has started but its size is not known yet, go indeterminate,
+and switch to a value as soon as there is one.`}),(0,N.jsx)(s,{of:x}),(0,N.jsx)(t.h2,{id:`resources`,children:`Resources`}),(0,N.jsx)(t.p,{children:`From npm, or copied into your project through the registry:`}),(0,N.jsx)(t.pre,{children:(0,N.jsx)(t.code,{className:`language-js`,children:`import { ProgressBar } from 'marram/progress-bar'
+`})}),(0,N.jsx)(t.pre,{children:(0,N.jsx)(t.code,{className:`language-sh`,children:`npx shadcn@latest add https://marram.ontheshore.biz/r/progress-bar.json
+`})}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[`Source: `,(0,N.jsx)(t.a,{href:`https://github.com/nguucode/marram/blob/main/src/components/loaders/ProgressBar.tsx`,rel:`nofollow`,children:`src/components/loaders/ProgressBar.tsx`})]}),`
+`,(0,N.jsxs)(t.li,{children:[`Spec: `,(0,N.jsx)(t.a,{href:`https://www.uiguideline.com/components/progress-bar`,rel:`nofollow`,children:`uiguideline.com/components/progress-bar`})]}),`
+`,(0,N.jsxs)(t.li,{children:[`Behaviour: `,(0,N.jsx)(t.a,{href:`https://base-ui.com/react/components/progress`,rel:`nofollow`,children:`Base UI Progress`})]}),`
+`,(0,N.jsx)(t.li,{children:`Figma: not in the library yet`}),`
+`]})]}),(0,N.jsxs)(p,{value:`specs`,children:[(0,N.jsx)(t.h2,{id:`anatomy`,children:`Anatomy`}),(0,N.jsx)(l,{parts:y,children:(0,N.jsx)(i,{of:k})}),(0,N.jsx)(t.h2,{id:`measurements`,children:`Measurements`}),(0,N.jsx)(t.p,{children:`The bar fills the width of its container. Each size sets only the track's
+height.`}),(0,N.jsx)(h,{caption:`sm`,rows:[{part:`Track`,property:`Height`,token:`--progress-sm`}]}),(0,N.jsx)(h,{caption:`md`,rows:[{part:`Track`,property:`Height`,token:`--progress-md`}]}),(0,N.jsx)(h,{caption:`lg`,rows:[{part:`Track`,property:`Height`,token:`--progress-lg`}]}),(0,N.jsx)(h,{caption:`Every size`,rows:[{part:`Label to track`,property:`Gap`,token:`--control-sm-gap`},{part:`Track to value label`,property:`Gap`,token:`--space-cluster`},{part:`Track and indicator, rounded`,property:`Corner radius`,token:`--radius-pill`},{part:`Label and value label`,property:`Font size`,token:`--text-body`},{part:`Label and value label`,property:`Line height`,token:`--leading-body`},{part:`Indicator`,property:`Transition between values`,token:`--duration-slow`}]}),(0,N.jsx)(t.p,{children:`The value label is at least 4 characters wide, so the bar does not jump as
+the number grows from 9% to 100%.`}),(0,N.jsx)(t.h2,{id:`color`,children:`Color`}),(0,N.jsx)(t.p,{children:`The fill is what carries the value, so it must clear 3:1 against the
+track. Not every accent's solid does (amber's is about 2.9:1 on white), so
+each variant fills with a colour meant to be read as text on the page,
+which keeps it at 3:1 or better on the track. Switch the theme and the
+accent in the toolbar: the values follow.`}),(0,N.jsx)(h,{caption:`primary`,rows:[{part:`Indicator`,property:`Background`,token:`--color-text-brand`}]}),(0,N.jsx)(h,{caption:`accent`,rows:[{part:`Indicator`,property:`Background`,token:`--color-text`}]}),(0,N.jsx)(h,{caption:`secondary`,rows:[{part:`Indicator`,property:`Background`,token:`--color-text-subtlest`}]}),(0,N.jsx)(h,{caption:`destructive`,rows:[{part:`Indicator`,property:`Background`,token:`--color-text-danger`}]}),(0,N.jsx)(h,{caption:`Every variant`,rows:[{part:`Track`,property:`Background`,token:`--color-background-neutral`},{part:`Label`,property:`Colour`,token:`--color-text`},{part:`Value label`,property:`Colour`,token:`--color-text-subtlest`}]}),(0,N.jsx)(t.h2,{id:`states`,children:`States`}),(0,N.jsx)(t.p,{children:`A progress bar is not interactive: it has no hover, focus or pressed
+state.`}),(0,N.jsx)(f,{states:[{label:`Progress`},{label:`Indeterminate`,content:(0,N.jsx)(E,{isIndeterminate:!0,label:`Connecting`})},{label:`Complete`,content:(0,N.jsx)(E,{value:100,label:`Uploaded`,showValueLabel:!0})}],children:(0,N.jsx)(E,{value:70,label:`Uploading`,showValueLabel:!0})}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`Progress`}),` fills from the start edge, easing between values over
+`,(0,N.jsx)(t.code,{children:`--duration-slow`}),`.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`Indeterminate`}),` slides 40% of the track across, once every 1.4s.
+The value label is hidden: there is no value to show.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`Complete`}),` is a full bar. It does not change on its own; replace or
+remove it when the task ends.`]}),`
+`]}),(0,N.jsx)(t.h2,{id:`api`,children:`API`}),(0,N.jsx)(`div`,{style:{overflowX:`auto`},children:(0,N.jsx)(o,{of:T})}),(0,N.jsxs)(t.p,{children:[`Every other prop goes to Base UI's `,(0,N.jsx)(t.code,{children:`Progress.Root`}),`: `,(0,N.jsx)(t.code,{children:`id`}),`,
+`,(0,N.jsx)(t.code,{children:`aria-labelledby`}),`, `,(0,N.jsx)(t.code,{children:`min`}),`, `,(0,N.jsx)(t.code,{children:`format`}),`, `,(0,N.jsx)(t.code,{children:`locale`}),`, `,(0,N.jsx)(t.code,{children:`getAriaValueText`}),`.`]}),(0,N.jsx)(t.h3,{id:`differences-from-the-spec`,children:`Differences from the spec`}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsxs)(t.strong,{children:[(0,N.jsx)(t.code,{children:`max`}),`, not `,(0,N.jsx)(t.code,{children:`maxValue`})]}),`, the name Base UI and the native `,(0,N.jsx)(t.code,{children:`<progress>`}),`
+use.`]}),`
+`]})]}),(0,N.jsxs)(p,{value:`guidelines`,children:[(0,N.jsx)(t.h2,{id:`when-to-use`,children:`When to use`}),(0,N.jsxs)(t.p,{children:[`Use a Progress Bar for a task that takes long enough to wait on and whose
+size is known, or will be: an upload, an import, the steps of a setup.
+Name the task in the `,(0,N.jsx)(t.code,{children:`label`}),`.`]}),(0,N.jsx)(u,{do:(0,N.jsx)(i,{of:w}),doCaption:`The label names the task, so the reader knows what they are waiting for.`,dont:(0,N.jsx)(i,{of:D}),dontCaption:`A bare bar leaves sighted readers guessing what it measures, even with an aria-label.`}),(0,N.jsxs)(t.p,{children:[(0,N.jsx)(t.code,{children:`value`}),` is out of `,(0,N.jsx)(t.code,{children:`max`}),`, and the value label shows the percentage:`]}),(0,N.jsx)(s,{of:_}),(0,N.jsxs)(t.p,{children:[`Without a visible label, `,(0,N.jsx)(t.code,{children:`aria-label`}),` names the bar for screen readers.
+Use it only where the context already says what the bar measures.`]}),(0,N.jsx)(s,{of:A}),(0,N.jsx)(t.h2,{id:`when-not-to-use`,children:`When not to use`}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`For a short wait with no known size.`}),` Use a
+`,(0,N.jsx)(t.a,{href:`?path=/docs/components-loaders-spinner--docs`,children:`Spinner`}),`.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`For content whose shape you know.`}),` A
+`,(0,N.jsx)(t.a,{href:`?path=/docs/components-loaders-skeleton--docs`,children:`Skeleton`}),` keeps the
+layout.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`For steps the user moves through themselves.`}),` Use a
+`,(0,N.jsx)(t.a,{href:`?path=/docs/components-navigation-stepper--docs`,children:`Stepper`}),`: it names the
+steps, and the user can go back.`]}),`
+`]}),(0,N.jsx)(t.h2,{id:`accessibility`,children:`Accessibility`}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.code,{children:`role="progressbar"`}),` with `,(0,N.jsx)(t.code,{children:`aria-valuenow`}),`, `,(0,N.jsx)(t.code,{children:`aria-valuemin`}),` and
+`,(0,N.jsx)(t.code,{children:`aria-valuemax`}),`, and `,(0,N.jsx)(t.code,{children:`aria-valuetext`}),` from Base UI. Indeterminate drops
+`,(0,N.jsx)(t.code,{children:`aria-valuenow`}),` rather than reporting 0.`]}),`
+`,(0,N.jsxs)(t.li,{children:[`Every bar needs a name: a visible `,(0,N.jsx)(t.code,{children:`label`}),` (linked by Base UI) or
+`,(0,N.jsx)(t.code,{children:`aria-label`}),`.`]}),`
+`,(0,N.jsxs)(t.li,{children:[`The fill clears 3:1 on the track for every variant and accent, in both
+modes. The value label is `,(0,N.jsx)(t.code,{children:`--color-text-subtlest`}),`.`]}),`
+`,(0,N.jsxs)(t.li,{children:[`Under `,(0,N.jsx)(t.code,{children:`prefers-reduced-motion`}),` the fill stops easing between values and
+the indeterminate slide slows from 1.4s to 4s a pass.`]}),`
+`,(0,N.jsx)(t.li,{children:`A progressbar is not a live region. If completion matters, announce it
+(a Toast, or a status message) when the task ends.`}),`
+`]})]})]})]})}function M(e={}){let{wrapper:t}={...n(),...e.components};return t?(0,N.jsx)(t,{...e,children:(0,N.jsx)(j,{...e})}):j(e)}var N;function P(){return(P=e((()=>{N=t(),r(),a(),g(),C(),b()})))()}P();export{M as default};

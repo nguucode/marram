@@ -1,0 +1,65 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{i as n,r}from"./react-BXJ34t_g.js";import{c as i,l as a,n as o,r as s,s as c}from"./blocks-GpDLDP7O.js";import{_ as l,f as u,h as d,i as f,m as p,n as m,o as h,t as g}from"./blocks-COhIzeP7.js";import{n as _,t as v}from"./Radio-CwpFjN6P.js";import{a as y,c as b,d as x,f as S,i as C,l as w,n as T,o as E,r as D,s as O,t as k,u as A}from"./Radio.stories-C31FXd1L.js";function j(e){let t={a:`a`,code:`code`,h1:`h1`,h2:`h2`,h3:`h3`,li:`li`,p:`p`,pre:`pre`,strong:`strong`,table:`table`,tbody:`tbody`,td:`td`,th:`th`,thead:`thead`,tr:`tr`,ul:`ul`,...n(),...e.components};return(0,N.jsxs)(N.Fragment,{children:[(0,N.jsx)(c,{of:b}),`
+`,(0,N.jsx)(t.h1,{id:`radio`,children:`Radio`}),`
+`,(0,N.jsxs)(d,{children:[(0,N.jsxs)(p,{value:`overview`,children:[(0,N.jsxs)(t.p,{children:[`Chooses exactly one option from a short list, all visible at once. The
+component is `,(0,N.jsx)(t.code,{children:`RadioGroup`}),`.`]}),(0,N.jsx)(m,{of:b}),(0,N.jsx)(s,{of:D}),(0,N.jsx)(t.h2,{id:`variants`,children:`Variants`}),(0,N.jsxs)(t.p,{children:[(0,N.jsx)(t.code,{children:`variant`}),` is the colour of the selected radio; `,(0,N.jsx)(t.code,{children:`orientation`}),` lays the
+options out in a column or a row.`]}),(0,N.jsx)(s,{of:A}),(0,N.jsxs)(t.table,{children:[(0,N.jsx)(t.thead,{children:(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.th,{children:`Variant`}),(0,N.jsx)(t.th,{children:`Use for`})]})}),(0,N.jsxs)(t.tbody,{children:[(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.td,{children:(0,N.jsx)(t.code,{children:`neutral`})}),(0,N.jsx)(t.td,{children:`The default: forms and settings. The selected radio is the foreground colour.`})]}),(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.td,{children:(0,N.jsx)(t.code,{children:`primary`})}),(0,N.jsx)(t.td,{children:`A choice that carries the brand: a plan picker beside a primary button.`})]})]})]}),(0,N.jsxs)(t.table,{children:[(0,N.jsx)(t.thead,{children:(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.th,{children:`Orientation`}),(0,N.jsx)(t.th,{children:`Use for`})]})}),(0,N.jsxs)(t.tbody,{children:[(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.td,{children:(0,N.jsx)(t.code,{children:`vertical`})}),(0,N.jsx)(t.td,{children:`The default. Options with helper text, or labels longer than a word or two.`})]}),(0,N.jsxs)(t.tr,{children:[(0,N.jsx)(t.td,{children:(0,N.jsx)(t.code,{children:`horizontal`})}),(0,N.jsx)(t.td,{children:`Two to four short labels: sizes, yes or no. The row wraps when narrow.`})]})]})]}),(0,N.jsx)(s,{of:O}),(0,N.jsx)(s,{of:w}),(0,N.jsx)(t.h2,{id:`resources`,children:`Resources`}),(0,N.jsx)(t.p,{children:`From npm, or copied into your project through the registry:`}),(0,N.jsx)(t.pre,{children:(0,N.jsx)(t.code,{className:`language-js`,children:`import { RadioGroup } from 'marram/radio'
+`})}),(0,N.jsx)(t.pre,{children:(0,N.jsx)(t.code,{className:`language-sh`,children:`npx shadcn@latest add https://marram.ontheshore.biz/r/radio.json
+`})}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[`Source: `,(0,N.jsx)(t.a,{href:`https://github.com/nguucode/marram/blob/main/src/components/controls/Radio.tsx`,rel:`nofollow`,children:`src/components/controls/Radio.tsx`})]}),`
+`,(0,N.jsxs)(t.li,{children:[`Spec: `,(0,N.jsx)(t.a,{href:`https://www.uiguideline.com/components/radio`,rel:`nofollow`,children:`uiguideline.com/components/radio`})]}),`
+`,(0,N.jsxs)(t.li,{children:[`Behaviour: `,(0,N.jsx)(t.a,{href:`https://base-ui.com/react/components/radio`,rel:`nofollow`,children:`Base UI Radio Group`}),`, `,(0,N.jsx)(t.a,{href:`https://base-ui.com/react/components/field`,rel:`nofollow`,children:`Field`}),` and `,(0,N.jsx)(t.a,{href:`https://base-ui.com/react/components/fieldset`,rel:`nofollow`,children:`Fieldset`})]}),`
+`,(0,N.jsx)(t.li,{children:`Figma: not in the library yet`}),`
+`]})]}),(0,N.jsxs)(p,{value:`specs`,children:[(0,N.jsx)(t.h2,{id:`anatomy`,children:`Anatomy`}),(0,N.jsx)(l,{parts:x,children:(0,N.jsx)(i,{of:k})}),(0,N.jsx)(t.p,{children:`Each option's label wraps its radio, so the whole label is part of the
+click target.`}),(0,N.jsx)(t.h2,{id:`measurements`,children:`Measurements`}),(0,N.jsx)(t.p,{children:`One size. The circle is 16px, Atlassian's, inside a 24px hit area, and
+sits centred on the first line of its label, however many lines the
+label wraps to. The label starts 8px from the circle: Atlassian's 4px
+gap after the 24px area. Stacked options are 4px apart, one every 24px,
+so their hit areas meet without overlapping.`}),(0,N.jsx)(h,{caption:`Every radio group`,rows:[{part:`Radio`,property:`Size`,token:`--choice-box`},{part:`Radio`,property:`Corner radius`,token:`--radius-pill`},{part:`Dot`,property:`Size`,token:`--radio-dot-size`},{part:`Option label`,property:`Gap from the radio`,token:`--space-inline`},{part:`Option label`,property:`Font size`,token:`--text-body`},{part:`Option label`,property:`Line height`,token:`--leading-body`},{part:`Options`,property:`Gap, vertical`,token:`--space-1`},{part:`Options`,property:`Gap, horizontal`,token:`--space-6`},{part:`Option helper`,property:`Gap from the label`,token:`--space-stack`},{part:`Legend`,property:`Font weight`,token:`--font-weight-label`},{part:`Focus ring`,property:`Width`,token:`--focus-width`},{part:`Focus ring`,property:`Offset`,token:`--focus-offset`},{part:`Hit area`,property:`Minimum`,token:`--box-sm`},{part:`Hit area`,property:`Minimum on touch screens`,token:`--target-coarse`}]}),(0,N.jsx)(t.p,{children:`The legend is the body size at Atlassian's form label weight, 653 (its
+Legend and Label share it). An option's own label is regular weight, as
+Atlassian's radio and checkbox labels are.`}),(0,N.jsx)(t.h2,{id:`color`,children:`Color`}),(0,N.jsx)(h,{caption:`Unselected, every variant`,rows:[{part:`Radio`,property:`Background`,token:`--color-surface`},{part:`Radio`,property:`Border`,token:`--color-border-bold`},{part:`Radio, hover`,property:`Border`,token:`--color-text`}]}),(0,N.jsx)(h,{caption:`neutral, selected`,rows:[{part:`Radio`,property:`Background`,token:`--color-text`},{part:`Dot`,property:`Colour`,token:`--color-surface`}]}),(0,N.jsx)(h,{caption:`primary, selected`,rows:[{part:`Radio`,property:`Background`,token:`--color-background-brand-bold`},{part:`Dot`,property:`Colour`,token:`--color-text-brand-inverse`}]}),(0,N.jsx)(h,{caption:`Every variant`,rows:[{part:`Legend and option label`,property:`Colour`,token:`--color-text`},{part:`Option and group helper`,property:`Colour`,token:`--color-text-subtlest`},{part:`Radio, error`,property:`Border`,token:`--color-text-danger`},{part:`Group helper, error`,property:`Colour`,token:`--color-text-danger`},{part:`Group helper, success`,property:`Colour`,token:`--color-text-success`},{part:`Required asterisk`,property:`Colour`,token:`--color-text-danger`},{part:`Focus ring`,property:`Colour`,token:`--color-border-focused`}]}),(0,N.jsx)(t.p,{children:`An option's own helper describes the option, so it stays muted when the
+group is in error or success; only the group message takes that colour.`}),(0,N.jsx)(t.h2,{id:`states`,children:`States`}),(0,N.jsx)(f,{states:[{label:`Enabled`},{label:`Hover`,pseudo:`hover`},{label:`Focus`,pseudo:`focus-visible`},{label:`Disabled`,content:(0,N.jsx)(i,{of:C})},{label:`Error`,content:(0,N.jsx)(v,{label:`Plan`,options:[{value:`free`,label:`Free`},{value:`pro`,label:`Pro`}],validationState:`error`,helperText:`Choose a plan.`})}],children:(0,N.jsx)(v,{label:`Plan`,options:[{value:`free`,label:`Free`},{value:`pro`,label:`Pro`}],defaultValue:`pro`})}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`Hover`}),` anywhere on an option's label darkens an unselected ring to
+`,(0,N.jsx)(t.code,{children:`--color-text`}),`. The selected radio mixes 12% of the dot's colour into
+its fill, as Button does. An error ring stays red.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`Focus`}),` is a 2px `,(0,N.jsx)(t.code,{children:`--color-border-focused`}),` outline, 2px outside the circle.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`Disabled`}),` dims the radio and its label to 50%, for the whole group
+or one option.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`Read-only`}),` looks enabled but has no hover and an arrow cursor.`]}),`
+`]}),(0,N.jsx)(t.h2,{id:`api`,children:`API`}),(0,N.jsx)(`div`,{style:{overflowX:`auto`},children:(0,N.jsx)(o,{of:b})}),(0,N.jsxs)(t.p,{children:[(0,N.jsx)(t.code,{children:`className`}),`, `,(0,N.jsx)(t.code,{children:`aria-label`}),` and `,(0,N.jsx)(t.code,{children:`ref`}),` pass through to the group.`]}),(0,N.jsx)(t.h3,{id:`differences-from-the-spec`,children:`Differences from the spec`}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`Atlassian's box.`}),` A 16px circle with a 6px dot inside a 24px hit
+area.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`The component is the group.`}),` The spec describes a single radio, but
+a radio means nothing alone: selection, arrow keys and the single tab
+stop all belong to the group. Following the kit's "flat props"
+convention, the radios are `,(0,N.jsx)(t.code,{children:`options`}),` rather than child components.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsxs)(t.strong,{children:[(0,N.jsx)(t.code,{children:`checked`}),` and `,(0,N.jsx)(t.code,{children:`autoFocus`}),` per radio are not props.`]}),` The group's
+`,(0,N.jsx)(t.code,{children:`value`}),` says which is checked.`]}),`
+`,(0,N.jsxs)(t.li,{children:[`Base UI's `,(0,N.jsx)(t.code,{children:`onValueChange`}),` and native `,(0,N.jsx)(t.code,{children:`disabled`}),`, `,(0,N.jsx)(t.code,{children:`required`}),`,
+`,(0,N.jsx)(t.code,{children:`readOnly`}),` names, as on Checkbox.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsxs)(t.strong,{children:[`No `,(0,N.jsx)(t.code,{children:`secondary`}),`.`]}),` A light fill barely reads as selected, so only
+`,(0,N.jsx)(t.code,{children:`neutral`}),` (the foreground colour) and `,(0,N.jsx)(t.code,{children:`primary`}),` ship, as on Checkbox.`]}),`
+`]})]}),(0,N.jsxs)(p,{value:`guidelines`,children:[(0,N.jsx)(t.h2,{id:`when-to-use`,children:`When to use`}),(0,N.jsx)(t.p,{children:`Use radios to choose one option from a short list, when seeing every
+option at once helps the choice: a plan, a delivery method, a size. Up to
+about six options. Select the usual choice by default when there is one.`}),(0,N.jsx)(u,{do:(0,N.jsx)(i,{of:y}),doCaption:`A few options, all in view, the usual one already selected.`,dont:(0,N.jsx)(i,{of:E}),dontCaption:`Ten radios are a wall to scan. A long list belongs in a Select or a Combobox.`}),(0,N.jsx)(s,{of:T}),(0,N.jsx)(t.h2,{id:`when-not-to-use`,children:`When not to use`}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`For more than about six options, or options that do not fit on
+screen.`}),` Use a Select, or a Combobox when the reader knows what to type.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`For several choices at once.`}),` Use
+`,(0,N.jsx)(t.a,{href:`?path=/docs/components-controls-checkbox--docs`,children:`Checkboxes`}),`.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`For a single on or off.`}),` Use a
+`,(0,N.jsx)(t.a,{href:`?path=/docs/components-controls-checkbox--docs`,children:`Checkbox`}),` in a form, or a
+`,(0,N.jsx)(t.a,{href:`?path=/docs/components-controls-switch--docs`,children:`Switch`}),` for a setting
+that applies at once.`]}),`
+`]}),(0,N.jsx)(t.h2,{id:`accessibility`,children:`Accessibility`}),(0,N.jsxs)(t.ul,{children:[`
+`,(0,N.jsxs)(t.li,{children:[`A `,(0,N.jsx)(t.code,{children:`<fieldset>`}),` with a `,(0,N.jsx)(t.code,{children:`<legend>`}),`, exposed as a `,(0,N.jsx)(t.code,{children:`radiogroup`}),` named by
+the legend.`]}),`
+`,(0,N.jsxs)(t.li,{children:[(0,N.jsx)(t.strong,{children:`One tab stop for the group.`}),` Tab enters at the selected radio (or
+the first), arrow keys move and select, Tab leaves. Disabled options
+are skipped.`]}),`
+`,(0,N.jsx)(t.li,{children:`Each option's helper text is its own description. Plain group help
+describes the group once; an error message reaches every radio, so
+whichever has focus says what is wrong.`}),`
+`,(0,N.jsxs)(t.li,{children:[`The unselected outline is `,(0,N.jsx)(t.code,{children:`--color-border-bold`}),`, 3:1 on the page.`]}),`
+`,(0,N.jsxs)(t.li,{children:[`A hidden native input carries `,(0,N.jsx)(t.code,{children:`name`}),` and `,(0,N.jsx)(t.code,{children:`required`}),` into form
+submission and validation.`]}),`
+`,(0,N.jsx)(t.li,{children:`Each radio's hit area is 24×24px, 44×44px on coarse pointers.`}),`
+`]})]})]})]})}function M(e={}){let{wrapper:t}={...n(),...e.components};return t?(0,N.jsx)(t,{...e,children:(0,N.jsx)(j,{...e})}):j(e)}var N;function P(){return(P=e((()=>{N=t(),r(),a(),g(),_(),S()})))()}P();export{M as default};

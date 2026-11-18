@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{c as t,l as n}from"./useButton-BTBXVE0b.js";import{Lt as r,Rt as i}from"./DirectionContext-jwbrgzG8.js";function a(e,t){let r=i(e);return n(()=>(t(r),()=>{t(e=>e===r?void 0:e)}),[r,t]),r}function o(){return(o=e((()=>{t(),r()})))()}export{a as n,o as t};

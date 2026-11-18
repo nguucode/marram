@@ -1,0 +1,44 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{i as n,r}from"./react-BXJ34t_g.js";import{c as i,l as a,n as o,r as s,s as c}from"./blocks-GpDLDP7O.js";import{_ as l,f as u,h as d,i as f,m as p,n as m,o as h,t as g}from"./blocks-COhIzeP7.js";import{a as _,c as v,d as y,f as b,i as x,l as S,n as C,o as w,p as T,r as E,s as D,t as O,u as k}from"./Divider.stories-DWhrO6pt.js";function A(e){let t={a:`a`,code:`code`,h1:`h1`,h2:`h2`,h3:`h3`,li:`li`,p:`p`,pre:`pre`,strong:`strong`,table:`table`,tbody:`tbody`,td:`td`,th:`th`,thead:`thead`,tr:`tr`,ul:`ul`,...n(),...e.components};return(0,M.jsxs)(M.Fragment,{children:[(0,M.jsx)(c,{of:x}),`
+`,(0,M.jsx)(t.h1,{id:`divider`,children:`Divider`}),`
+`,(0,M.jsxs)(d,{children:[(0,M.jsxs)(p,{value:`overview`,children:[(0,M.jsx)(t.p,{children:`A thin line that separates content into groups: sections of a card, items
+in a toolbar, blocks of a page.`}),(0,M.jsx)(m,{of:x}),(0,M.jsx)(s,{of:E}),(0,M.jsx)(t.h2,{id:`variants`,children:`Variants`}),(0,M.jsxs)(t.table,{children:[(0,M.jsx)(t.thead,{children:(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.th,{children:`Appearance`}),(0,M.jsx)(t.th,{children:`Use for`})]})}),(0,M.jsxs)(t.tbody,{children:[(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`solid`})}),(0,M.jsx)(t.td,{children:`Almost everywhere: the quiet default.`})]}),(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`dashed`})}),(0,M.jsx)(t.td,{children:`A boundary that is softer or provisional: a drop zone, a "more below" break, a draft section.`})]})]})]}),(0,M.jsx)(s,{of:C}),(0,M.jsxs)(t.p,{children:[`A `,(0,M.jsx)(t.strong,{children:`vertical`}),` divider separates items in a row: toolbar groups, links in
+a footer. It has no fixed height and stretches to its flex row.`]}),(0,M.jsx)(s,{of:S}),(0,M.jsxs)(t.p,{children:[(0,M.jsx)(t.strong,{children:`Inset`}),` stops the line short of the container's edges, so it aligns with
+the text in a padded list rather than running edge to edge.`]}),(0,M.jsx)(s,{of:D}),(0,M.jsx)(s,{of:v}),(0,M.jsx)(t.h2,{id:`resources`,children:`Resources`}),(0,M.jsx)(t.p,{children:`From npm, or copied into your project through the registry:`}),(0,M.jsx)(t.pre,{children:(0,M.jsx)(t.code,{className:`language-js`,children:`import { Divider } from 'marram/divider'
+`})}),(0,M.jsx)(t.pre,{children:(0,M.jsx)(t.code,{className:`language-sh`,children:`npx shadcn@latest add https://marram.ontheshore.biz/r/divider.json
+`})}),(0,M.jsxs)(t.ul,{children:[`
+`,(0,M.jsxs)(t.li,{children:[`Source: `,(0,M.jsx)(t.a,{href:`https://github.com/nguucode/marram/blob/main/src/components/atomic-elements/Divider.tsx`,rel:`nofollow`,children:`src/components/atomic-elements/Divider.tsx`})]}),`
+`,(0,M.jsxs)(t.li,{children:[`Spec: `,(0,M.jsx)(t.a,{href:`https://www.uiguideline.com/components/divider`,rel:`nofollow`,children:`uiguideline.com/components/divider`})]}),`
+`,(0,M.jsx)(t.li,{children:`Figma: not in the library yet`}),`
+`]})]}),(0,M.jsxs)(p,{value:`specs`,children:[(0,M.jsx)(t.h2,{id:`anatomy`,children:`Anatomy`}),(0,M.jsx)(l,{parts:k,children:(0,M.jsx)(i,{of:O})}),(0,M.jsx)(t.p,{children:`One part. The line is a border, top for horizontal and start for
+vertical, and the box shrinks to it: a vertical divider is exactly as
+wide as its line.`}),(0,M.jsx)(t.h2,{id:`measurements`,children:`Measurements`}),(0,M.jsxs)(t.p,{children:[`Thickness is whole pixels, not a token: `,(0,M.jsx)(t.code,{children:`--border-width`}),` covers 1px and
+`,(0,M.jsx)(t.code,{children:`--border-width-selected`}),` 2px, and a divider's three weights stay its own.`]}),(0,M.jsxs)(t.table,{children:[(0,M.jsx)(t.thead,{children:(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.th,{children:`Size`}),(0,M.jsx)(t.th,{children:`Thickness`})]})}),(0,M.jsxs)(t.tbody,{children:[(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`sm`})}),(0,M.jsx)(t.td,{children:`1px`})]}),(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`md`})}),(0,M.jsx)(t.td,{children:`2px`})]}),(0,M.jsxs)(t.tr,{children:[(0,M.jsx)(t.td,{children:(0,M.jsx)(t.code,{children:`lg`})}),(0,M.jsx)(t.td,{children:`4px`})]})]})]}),(0,M.jsx)(h,{caption:`inset, every size`,rows:[{part:`Horizontal line`,property:`Inline margin`,token:`--space-4`},{part:`Vertical line`,property:`Block margin`,token:`--space-2`}]}),(0,M.jsx)(t.h2,{id:`color`,children:`Color`}),(0,M.jsx)(t.p,{children:`Every size and appearance uses the same colour.`}),(0,M.jsx)(h,{caption:`Every appearance`,rows:[{part:`Line`,property:`Colour`,token:`--color-border`}]}),(0,M.jsx)(t.h2,{id:`states`,children:`States`}),(0,M.jsx)(t.p,{children:`A divider is not interactive: no hover, focus or pressed. It looks the same
+whether it is announced or decorative; only a screen reader tells them
+apart.`}),(0,M.jsx)(f,{states:[{label:`Solid`,content:(0,M.jsx)(N,{children:(0,M.jsx)(b,{})})},{label:`Dashed`,content:(0,M.jsx)(N,{children:(0,M.jsx)(b,{appearance:`dashed`,size:`md`})})},{label:`Inset`,content:(0,M.jsx)(N,{children:(0,M.jsx)(b,{inset:!0})})},{label:`Decorative`,content:(0,M.jsx)(N,{children:(0,M.jsx)(b,{"aria-hidden":!0})})}]}),(0,M.jsx)(t.h2,{id:`api`,children:`API`}),(0,M.jsx)(`div`,{style:{overflowX:`auto`},children:(0,M.jsx)(o,{of:x})}),(0,M.jsxs)(t.p,{children:[`Every other `,(0,M.jsx)(t.code,{children:`<hr>`}),` attribute passes through, including `,(0,M.jsx)(t.code,{children:`ref`}),` and
+`,(0,M.jsx)(t.code,{children:`aria-hidden`}),`.`]}),(0,M.jsx)(t.h3,{id:`differences-from-the-spec`,children:`Differences from the spec`}),(0,M.jsxs)(t.ul,{children:[`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsxs)(t.strong,{children:[(0,M.jsx)(t.code,{children:`appearance`}),`, not `,(0,M.jsx)(t.code,{children:`variant`}),`.`]}),` In this kit `,(0,M.jsx)(t.code,{children:`variant`}),` always means a
+colour by intent (primary, destructive…) and `,(0,M.jsx)(t.code,{children:`appearance`}),` means a style.
+Solid versus dashed is a style.`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`Thickness is raw px.`}),` `,(0,M.jsx)(t.code,{children:`--border-width`}),` and `,(0,M.jsx)(t.code,{children:`--border-width-selected`}),`
+cover 1px and 2px strokes; a divider is the only component that needs a
+third, so its three weights stay its own.`]}),`
+`]})]}),(0,M.jsxs)(p,{value:`guidelines`,children:[(0,M.jsx)(t.h2,{id:`when-to-use`,children:`When to use`}),(0,M.jsx)(t.p,{children:`Use a Divider between groups that spacing alone does not separate: the
+sections of a menu, the blocks of a settings page, groups in a toolbar.
+Divide groups, not every item: a line after each row turns a list into
+stripes and makes the real breaks harder to see.`}),(0,M.jsx)(u,{do:(0,M.jsx)(i,{of:_}),doCaption:`One line between two groups: the break carries meaning.`,dont:(0,M.jsx)(i,{of:w}),dontCaption:`A line after every item: nothing stands out as a group.`}),(0,M.jsx)(t.h2,{id:`when-not-to-use`,children:`When not to use`}),(0,M.jsxs)(t.ul,{children:[`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`Where space already separates.`}),` Cards, list items with padding and
+headed sections are grouped by their own whitespace; a line adds noise.`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`As the only thing that tells groups apart.`}),` The line is faint on
+purpose (see Accessibility). Pair it with a heading or space.`]}),`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.strong,{children:`For a border of a component.`}),` Draw that with the component's own
+border, not a Divider beside it.`]}),`
+`]}),(0,M.jsx)(t.h2,{id:`accessibility`,children:`Accessibility`}),(0,M.jsxs)(t.ul,{children:[`
+`,(0,M.jsxs)(t.li,{children:[(0,M.jsx)(t.code,{children:`<hr>`}),` is announced as a separator. Vertical dividers add
+`,(0,M.jsx)(t.code,{children:`aria-orientation="vertical"`}),`; horizontal ones don't, because that is
+already the default.`]}),`
+`,(0,M.jsxs)(t.li,{children:[`If the line is purely decorative, e.g. between two icons that are
+already grouped, pass `,(0,M.jsx)(t.code,{children:`aria-hidden`}),` so it isn't announced at all.`]}),`
+`,(0,M.jsxs)(t.li,{children:[`The `,(0,M.jsx)(t.code,{children:`--color-border`}),` colour is below 3:1 against the background on purpose: a
+divider is decoration and is not required to meet the non-text contrast
+ratio. Never let a divider be the only thing that tells groups apart.`]}),`
+`]})]})]})]})}function j(e={}){let{wrapper:t}={...n(),...e.components};return t?(0,M.jsx)(t,{...e,children:(0,M.jsx)(A,{...e})}):A(e)}var M,N;function P(){return(P=e((()=>{M=t(),r(),a(),g(),T(),y(),N=({children:e})=>(0,M.jsxs)(`div`,{style:{display:`grid`,gap:`var(--space-3)`,inlineSize:`8rem`},children:[(0,M.jsx)(`span`,{children:`Above`}),e,(0,M.jsx)(`span`,{children:`Below`})]})})))()}P();export{N as Stack,j as default};
