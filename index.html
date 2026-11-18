@@ -380,7 +380,7 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
 .cseg button:hover { color: #fff; }
 .cseg button svg { width: 16px; height: 16px; }
 .cseg button[aria-pressed="true"] { background: rgb(255 255 255 / 0.1); color: var(--acc-solid, #60a5fa); transition: color .4s var(--ease); }
-.custom + .laptop { margin-top: 6px; }
+.custom + .laptop { margin-top: 20px; }
 
 /* Hero parallax, scroll-driven and CSS only: sky slowest, copy faster and fading, laptop rising into view.
    Browsers without animation-timeline simply show the static hero. */
@@ -404,7 +404,8 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
 @keyframes px-laptop { from { transform: translateY(90px); } to { transform: none; } }
 
 /* 3D laptop stage */
-.laptop { position: relative; margin: 48px auto 0; width: min(100%, 1400px); aspect-ratio: 1.6; }
+/* the laptop body is ~80% of the stage, so 80vw draws it at ~65% of the viewport; full width on phones */
+.laptop { position: relative; margin: 48px auto 0; width: min(100%, max(80vw, 640px)); aspect-ratio: 1.6; }
 .laptop canvas { display: block; width: 100% !important; height: 100% !important; opacity: 0; transition: opacity .8s var(--ease); }
 .laptop.ready canvas { opacity: 1; }
 .laptop-wait { position: absolute; inset: 8% 14% 10%; display: grid; place-items: center; align-content: center; gap: 14px; }
