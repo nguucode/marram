@@ -176,8 +176,8 @@ h2 { font: 400 clamp(34px, 4.2vw, 52px)/1.08 var(--sans); letter-spacing: -0.035
 #found-show .caption { margin-top: 24px; }
 
 /* feature list under each section */
-.feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 40px; margin-block-start: 64px; padding-block-start: 48px; border-block-start: 1px solid var(--line); }
-.feat { display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--muted); }
+.feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 40px; margin-block-start: 64px; padding: 48px max(0px, calc((100% - 60vw) / 2)) 0; border-block-start: 1px solid var(--line); }
+.feat { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; font-size: 15px; color: var(--muted); }
 .feat i { width: 40px; height: 40px; border-radius: 10px; background: var(--soft); color: var(--c); display: grid; place-items: center; }
 .feat i svg { width: 20px; height: 20px; }
 /* title on its own line, description under it */
@@ -250,7 +250,7 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
 
 
 /* ---- design-system content ---- */
-.numbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; padding: 40px 24px; border-block: 1px solid var(--line); }
+.numbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; padding: 40px max(24px, calc((100% - 60vw) / 2)); border-block: 1px solid var(--line); }
 .numbers b { display: block; font: 500 clamp(36px, 4vw, 52px)/1.05 var(--sans); letter-spacing: -0.04em; color: oklch(48% 0.16 var(--acc-h)); font-variant-numeric: tabular-nums; transition: color 1.2s var(--ease); }
 .numbers span { display: block; font-weight: 600; margin-block-start: 6px; }
 .numbers small { display: block; color: var(--muted); font-size: 14px; }
@@ -472,9 +472,9 @@ footer .legal { margin-block-start: 48px; padding-block-start: 24px; border-bloc
     <!-- Numbers -->
     <section class="inner" aria-label="Marram in numbers" style="padding-block-start: 96px">
       <div class="numbers">
-        <div><b>55</b><span>Components</span><small>in React and in Figma, with variants and states</small></div>
+        <div><b>70</b><span>Components</span><small>916 variants in Figma, every state drawn</small></div>
         <div><b>506</b><span>Variables</span><small>colour, type, spacing and more, light and dark as modes</small></div>
-        <div><b>35</b><span>Icons</span><small>one 24px set, named by what they are for</small></div>
+        <div><b>4,063</b><span>Icons</span><small>all of Boxicons in the Figma file: basic, filled and brands</small></div>
       </div>
     </section>
 
