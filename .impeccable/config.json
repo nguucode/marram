@@ -1,0 +1,41 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "createdAt": "2026-11-18T06:37:01.869Z",
+        "reason": "Brand face: Marram wordmark is Instrument Sans SemiBold, chosen by sếp 2026-11-14 (logo kit)"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-18T06:37:01.888Z",
+        "reason": "Showcase frame (.show > .show-in > demo) is the approved Cap idiom: a product mock framed on a tinted stage"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-18T06:37:01.906Z",
+        "reason": "False positive: .show has padding clamp(14px,2vw,22px) and .show-in clamp(20px,4vw,48px); detector misses clamp()"
+      },
+      {
+        "rule": "italic-serif-display",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-18T06:37:07.371Z",
+        "reason": "Sếp approved the Cap/sky landing (sans + italic serif headings) on 2026-11-14, vault 10-projects/marram/_context.md"
+      }
+    ]
+  }
+}
