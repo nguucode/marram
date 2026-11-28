@@ -119,12 +119,15 @@ code { font-family: var(--mono); font-size: 0.88em; }
 .clouds { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
 .cloud { position: absolute; left: 0; width: min(var(--w), 62vw); aspect-ratio: calc(var(--w) / var(--h)); will-change: transform; animation: drift linear infinite; }
 .cloud canvas { display: block; width: 100%; height: 100%; }
-.cloud-gl { position: absolute; left: 0; top: 0; width: 100%; opacity: 0; filter: blur(8px); transition: opacity .2s var(--ease); }
+/* No CSS blur: the canvas redraws ~30 times a second, so a filter here re-rasterises every frame (worst in Firefox).
+   The quarter-resolution render upscaled with bilinear filtering is already soft. */
+.cloud-gl { position: absolute; left: 0; top: 0; width: 100%; opacity: 0; transition: opacity .2s var(--ease); }
 .clouds.gl .cloud-gl { opacity: 1; }
-.clouds.gl .cloud { opacity: 0 !important; transition: opacity .2s var(--ease); }
+/* hidden fallback clouds stop drifting once WebGL takes over */
+.clouds.gl .cloud { opacity: 0 !important; animation-play-state: paused; transition: opacity .2s var(--ease); }
 /* slow drift across the whole sky; durations of 7 to 12 minutes, offset so the sky is never empty */
 @keyframes drift { from { transform: translateX(-70vw); } to { transform: translateX(110vw); } }
-.modes { display: inline-flex; gap: 4px; padding: 5px; background: rgb(255 255 255 / 0.55); border: 1px solid rgb(255 255 255 / 0.7); border-radius: 999px; backdrop-filter: blur(8px); margin-block-end: 36px; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.6); }
+.modes { display: inline-flex; gap: 4px; padding: 5px; background: rgb(255 255 255 / 0.7); border: 1px solid rgb(255 255 255 / 0.7); border-radius: 999px; margin-block-end: 36px; /* denser fill instead of a backdrop blur, which sat over clouds that never stop moving */ box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.6); }
 .modes button { display: inline-flex; gap: 7px; align-items: center; font: 500 14px var(--sans); color: var(--muted); background: none; border: 0; border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .2s, color .2s; }
 .modes button svg { width: 15px; height: 15px; }
 .modes button[aria-pressed="true"] { background: var(--white); color: var(--ink); box-shadow: 0 1px 3px rgb(20 20 20 / 0.1); }
